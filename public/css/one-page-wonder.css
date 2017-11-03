@@ -1,0 +1,246 @@
+/*!
+ * Start Bootstrap - One Page Wonder (https://startbootstrap.com/template-overviews/one-page-wonder)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-one-page-wonder/blob/master/LICENSE)
+ */
+
+body {
+  padding-top: 54px;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+}
+
+div {
+	overflow-y: hidden;
+	overflow-x: hidden;
+	margin: auto;
+	background-repeat: no-repeat;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+    text-align: center;
+  }
+}
+
+header.masthead {
+  /*background: url('https://unsplash.it/1900/1080?image=304') no-repeat center center scroll;*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+header.masthead>.overlay {
+  padding: 5rem 0;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+ /* background-image: 2.jpg;*/
+}
+
+img{
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 992px) {
+  header.masthead>.overlay {
+    padding: 10rem 0;
+    opacity: 5;
+  }
+}
+
+.intro1 {
+	color: #343a40;
+	font-size: 13em;
+	font-family: "Better Together Script"; 
+	margin-top: 5rem;
+	background-blend-mode: saturation ;
+	text-align: center;
+}
+
+.intro2 {
+	color: #343a40;
+	margin-top: -1.5rem;
+	font-size: 1.5em; 
+	font-family: "Sweet Pea";
+	background-blend-mode: darken;
+	font-weight: bold;
+	text-align: center;
+}
+
+.caption {
+	color: #fff;
+	font-size: 1.5em; 
+	font-family: "Futurist Fixed-width";
+	caption-side: bottom;
+}
+
+.wrapper1 {
+	background-color: rgb( 230, 230, 230 );
+	background-blend-mode: darken;
+	width: 100%;
+	height: 700px;
+	border-top-style: solid;
+	left: 0px;
+	top: 0px;
+}
+
+.wrapper {
+	background-color: rgb( 230, 230, 230 );
+	background-blend-mode: darken;
+	width: 100%;
+	height: 700px;
+	left: 0px;
+	top: 0px;
+}
+
+.about { 
+	font-weight: normal;
+	font-size: 25px;
+	font-family: "Futurist Fixed-width";
+	text-align: center;
+}
+
+.a-content {
+	line-height: 30px;
+	font-size: 15px;
+	font-family: "Arial";
+	text-align: center;
+}
+
+.q1 {
+  	background-color: #868e96;
+	height: 120px;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	max-width: 100%;
+	margin: 0 auto;
+	position: relative;
+	line-height: 120px;
+	text-align: center; 
+	font-family: "Courier New";
+	color: rgb( 255, 255, 255 );
+	font-size: 25px;
+}
+
+.q2 {
+  	background-color: #343a40;
+	height: 120px;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	max-width: 100%;
+	margin: 0 auto;
+	position: relative;
+	line-height: 120px;
+	text-align: center; 
+	font-family: "Courier New";
+	color: rgb( 255, 255, 255 );
+	font-size: 25px;
+}
+
+.booknow_button {
+	width: 12rem;
+	height: 4rem;
+	position: unset;
+  	top: 0;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	margin-top: 25rem;
+  	mix-blend-mode: hard-light;
+  	font-weight: bold;
+  	font-size: 20px;
+  	background-blend-mode: darken;
+  	visibility: visible;
+  	border: 2px solid #f8f4f4;
+	box-shadow:0 0 1px #fff;
+	border-radius: 20px;
+	caption-side: bottom;
+}
+
+.dora {
+	color: #20c997; 
+	font-family: "Futurist Fixed-width";
+}
+
+.dora:hover {
+  text-decoration: none;
+  color: white;
+}
+
+h3.title-w3-agileits {
+	font-size: 2.4em;
+	margin-bottom: .8em;
+	color: white;
+}
+
+.advantages {
+	padding: 70px 0px;
+}
+
+.advantages {
+    background: url(../images/services.jpg)no-repeat;
+    min-height: 350px;
+    background-size: cover;
+}
+.advantage-block {
+    padding:2em 2em;
+    background: rgba(0, 0, 0, 0.52);
+    text-align: center;
+}
+.advantage-block:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+}
+.advantage-block h4 {
+    font-size: 1.5em;
+    color: #fff;
+    margin: 0.5em 0em 0.5em 0em;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+.advantage-block p {
+    font-size: 16px;
+    color: #FFF;
+    /* line-height: 1.8em; */
+    text-align: left;
+    padding-left: 3em;
+    line-height: 35px;
+	letter-spacing: .8px;
+}
+.advantage-bottom {
+	padding: 0;
+}
+
+.advantages-main {
+	padding: 0;
+}
+
+.advantage-grid {
+    padding: 0;
+}
+.left-w3ls {
+    border-right: 1px solid #b1b1b1;
+}
+.advantage-block .fa-credit-card,.advantage-block .fa-clock-o {
+    color: #ffce14;
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+.advantage-block p i {
+    color: #ffce14;
+    font-size: 13px;
+    margin-right: 10px;
+}
