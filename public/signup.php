@@ -204,11 +204,11 @@
 </form>
 </section>
 
- <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright 2017 &copy; Dora Hotels. All Rights Reserved | Designed by 
-          <a href="index.php" class="dora">DORA</a>
+<!-- Footer -->
+    <footer class="bg-dark">
+      <div class="p-4 container">
+        <p class="m-0 text-center text-white" style="font-weight: normal;">Copyright 2017 &copy; Dora Hotels. All Rights Reserved | Designed by 
+          <a href="#" class="dora">DORA</a>
         </p>
       </div>
       <!-- /.container -->

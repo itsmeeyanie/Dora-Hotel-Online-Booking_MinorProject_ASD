@@ -62,95 +62,73 @@
 <section style="background-color: rgb( 230, 230, 230 );">
     <div class="container p-5 m-auto">
 
-			 <div class="row pt-5">
-                    <div class="col-md-6">
-                        <h1 class="page-header">
-                            RESERVATION
-                        </h1>
-                    </div>
-                </div> 
-                <br>
-                  
-            <div class="row pb-5" >
-                <div class="col-md-4 col-sm-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            RESERVATION INFORMATION
-                        </div>
-                        <div class="panel-body">
+			<div class="row pt-5">
+          <div class="col-md-6">
+            <h1 class="page-header">RESERVATION</h1>
+          </div>
+      </div><br>
+      <div class="row pb-5" >
+        <div class="col-md-4 col-sm-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading"> RESERVATION INFORMATION </div>
+              <div class="panel-body">
 								<div class="form-group">
-                                            <label>Type Of Room *</label>
-                                            <select name="troom"  class="form-control" required>
-												<option value selected ></option>
-                                                <option value="Superior Room">SUPERIOR ROOM</option>
-                                                <option value="Deluxe Room">DELUXE ROOM</option>
-												<option value="Single Room">SINGLE ROOM</option>
-                                            </select>
-                              </div>
+                  <label>Type Of Room *</label>
+                    <select name="troom"  class="form-control" required>
+											<option value selected ></option>
+                      <option value="Superior Room">SUPERIOR ROOM</option>
+                      <option value="Deluxe Room">DELUXE ROOM</option>
+											<option value="Single Room">SINGLE ROOM</option>
+                    </select>
+                </div>
 							  <div class="form-group">
-                                            <label>Bedding Type</label>
-                                            <select name="bed" class="form-control" required>
-												<option value selected ></option>
-                                                <option value="Single">Single</option>
-                                                <option value="Double">Double</option>
-												<option value="Triple">Triple</option>
-                                                
-                                             
-                                            </select>
-                              </div>
+                  <label>Bedding Type</label>
+                    <select name="bed" class="form-control" required>
+											<option value selected ></option>
+                      <option value="Single">Single</option>
+                      <option value="Double">Double</option>
+											<option value="Triple">Triple</option>
+                    </select>
+                </div>
 							  <div class="form-group">
-                                            <label>Number of Rooms *</label>
-                                            <select name="nroom" class="form-control" required>
+                  <label>Number of Rooms *</label>
+                      <select name="nroom" class="form-control" required>
 												<option value selected ></option>
-                                                <option value="1">1</option>
-                                               <option value="2">2</option>
-												<!-- <option value="3">3</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+												<option value="3">3</option>
 												<option value="4">4</option>
-												<option value="5">5</option>
-												<option value="6">6</option>
-												<option value="7">7</option> -->
-                                            </select>
-                              </div>
-							 
-							 
+											</select>
+                </div>
 							  <div class="form-group">
-                                            <label>Amenities</label>
-                                            <select name="meal" class="form-control"required>
+                  <label>Amenities</label>
+                      <select name="meal" class="form-control"required>
 												<option value selected ></option>
-                                                <option value="Room only">Room only</option>
-                                                <option value="Breakfast">Breakfast</option>
+                        <option value="Room only">Room only</option>
+                        <option value="Breakfast">Breakfast</option>
 												<option value="Half Board">Half Board</option>
 												<option value="Full Board">Full Board</option>
-												
-                                                
-                                             
-                                            </select>
-                              </div>
-							  <div class="form-group">
-                                            <label>Check-In</label>
-                                            <input name="cin" type ="date" class="form-control">
-                                            
-                               </div>
-							   <div class="form-group">
-                                            <label>Check-Out</label>
-                                            <input name="cout" type ="date" class="form-control">
-                                            
-                               </div>
-                       </div>
-                        
-                    </div>
+											</select>
                 </div>
-				
-				        
-                <div class="col-md-12 col-sm-8 text-center">
-
-                    <div class="pt-5 p-5">
-                        <h4>USER VERIFICATION</h4>
-                        <p>Type Below this code <?php $Random_code=rand(); echo$Random_code; ?> </p><br />
+							  <div class="form-group">
+                  <label>Check-In</label>
+                    <input name="cin" type ="date" class="form-control">
+                </div>
+							  <div class="form-group">
+                  <label>Check-Out</label>
+                    <input name="cout" type ="date" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+				<div class="col-md-12 col-sm-8 text-center">
+          <div class="pt-5 p-5">
+            <h4>USER VERIFICATION</h4>
+            <p>Type Below this code <?php $Random_code=rand(); echo$Random_code; ?> </p><br />
 						<p>Enter the random code<br /></p>
 							<input  type="text" name="code1" title="random code" />
 							<input type="hidden" name="code" value="<?php echo $Random_code; ?>" />
-						<input type="submit" name="submit" class="btn btn-primary">
+						  <input type="submit" name="submit" class="btn btn-primary">
 						<?php
 							if(isset($_POST['submit']))
 							{
@@ -213,13 +191,14 @@
     <script src="assets/js/custom-scripts.js"></script>
 </section>
 
- <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright 2017 &copy; Dora Hotels. All Rights Reserved | Designed by 
-          <a href="index.php" class="dora">DORA</a>
+<!-- Footer -->
+    <footer class="bg-dark">
+      <div class="p-4 container">
+        <p class="m-0 text-center text-white" style="font-weight: normal;">Copyright 2017 &copy; Dora Hotels. All Rights Reserved | Designed by 
+          <a href="#" class="dora">DORA</a>
         </p>
       </div>
+      <!-- /.container -->
     </footer>
 
 </body>
