@@ -13,6 +13,9 @@
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- FontAwesome Styles-->
+    <link href="../admin/assets/css/font-awesome.css" rel="stylesheet" />
+
     <!-- Custom styles for this template -->
     <link href="css/one-page-wonder.css" rel="stylesheet">
     <link href="css/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
@@ -53,9 +56,6 @@
             <li class="nav-item">
               <button class="btn btn-outline-light" type="button" data-toggle="modal" data-target="#popUpWindow">LOGIN</button>
             </li>
-            <!-- <li class="nav-item">
-              <button class="btn btn-outline-light" type="button" data-toggle="modal" data-target="#exampleModal">SIGN UP</button>
-            </li> -->
           </ul>
         </div>
       </div>
@@ -67,7 +67,7 @@
         <div class="modal-content">
           
           <!-- header -->
-          <!-- <div class="modal-header">
+          <!-- <div class="modal-header style="background-color: #007bff;">
             <button type="button" class="close" data-dismiss="modal">&times</button>
           </div -->
 
@@ -92,9 +92,10 @@
     </div> -->
 <form>
     <div class="panel-body">
-      <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times</button>
-          </div>
+      <div class="modal-header" style="background-color: gray;">
+        <h5 class="text-center text-white">LOGIN</h5>
+        <button type="button" class="close" data-dismiss="modal">&times</button>
+      </div>
           <br>
                     <form class="form-horizontal" action="reservation.php" method="post">
                       <!--   {{ csrf_field() }} -->
@@ -140,7 +141,7 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary" href="index.php">
+                                <button type="submit" class="btn btn-dark" href="index.php">
                                     Login
                                 </button>
 
@@ -153,6 +154,7 @@
                          <p>If you don't have an account, click <a href="signup.php">here</a> to Sign Up.</p>
                         </div>
                         </div>
+
                     </form>
                 </div>
             </div>
@@ -167,7 +169,7 @@
 
 
     <!-- slideshow -->
-    <header class="masthead">
+    <header class="masthead pt-5">
     			<div id="my-slider" class="carousel slide" data-ride="carousel">
     				<!-- indicators dot nov -->
     				<ol class="carousel-indicators">
@@ -222,7 +224,7 @@
                              </div>
                              <!-- button -->
                               <div class="modal-footer">
-                                <button class="btn btn-primary btn-block">SUBMIT</button>
+                                <button class="btn btn-secondary btn-block">SUBMIT</button>
                               </div>
                            </form>
                          </div>
@@ -246,70 +248,61 @@
     </header>
 
     <!-- ABOUT US -->
-    <section>
-      <div class="wrapper1 m-auto p-5 ">
-        <div class="about">
-          ABOUT DORA
-           <div class="col-md-8 order-1 m-auto">
-             <p class="a-content">
-              Wanna have peace yet a wild place to stay ? Dora Hotel offers you to take a rest and enjoy our best luxury and foods that are cook by our Chef masters. Dora Hotel would also like our customers to be a food critique of our different variety of food. So what are you waiting for? Come, take a rest, Party wild, Eat and bury the burdens.
-             </p>
-            </div>
+  <section>
+    <div class="wrapper1 m-auto">
+      <div class="about pt-5">
+        ABOUT DORA
+        <div class="col-md-8 order-1 m-auto">
+          <p class="a-content">
+            Wanna have peace yet a wild place to stay ? Dora Hotel offers you to take a rest and enjoy our best luxury and foods that are cook by our Chef masters. Dora Hotel would also like our customers to be a food critique of our different variety of food. So what are you waiting for? Come, take a rest, Party wild, Eat and bury the burdens.
+          </p>
+        </div>
+      </div>
+
+      <div class="pb-5">
+        <div class="container p-5 pt-5">
+          <div class="ab-w3l-spa pb-5">
+            <img src="images/about.jpg" class="img-responsive">
           </div>
-
-          <!-- /about -->
-  <div>
-      <div class="container p-5 pt-5 pb-5">
-           <div class="ab-w3l-spa">
-               <img src="images/about.jpg" class="img-responsive" alt="Hair Salon">
-                    <div class="w3l-slider-img">
-                      <!-- <img src="images/a1.jpg" class="img-responsive" alt="Hair Salon"> -->
-                    </div>
-              </div>
         <div class="clearfix"> </div>
+      </div>
     </div>
-</div>
-  <!-- //about -->
-
-    </section>
+  </section>
+<!-- //about -->
 
     <!-- OUR SERVICES -->
-    <section>
-    <!--sevices-->
-      <div class="advantages">
-        <div class="container">
-          <div class="container-fluid">
-              <h3 class="title-w3-agileits">Our Services</h3>
-             <div class="row">
-             <div class="col-md-6 advantage-grid left-w3ls wow bounceInLeft" data-wow-delay="0.3s">
-              <div class="advantage-block ">
-                <i class="fa fa-credit-card" aria-hidden="true"></i>
-                <h4>Stay First, Pay After! </h4>
-                <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates.</p>
-                <p><i class="fa fa-check" aria-hidden="true"></i>Decorated room, proper air conditioned</p>
-                <p><i class="fa fa-check" aria-hidden="true"></i>Private balcony</p>
-                
+  <section>
+    <div class="advantages">
+      <div class="container">
+        <div class="container-fluid">
+          <h3 class="title-w3-agileits">Our Services</h3>
+            <div class="row">
+              <div class="col-md-6 advantage-grid left-w3ls wow bounceInLeft" data-wow-delay="0.3s">
+                <div class="advantage-block ">
+                  <i class="fa fa-credit-card" style="color: teal;" aria-hidden="true"></i>
+                  <h4>Pay First Then Enjoy Your Stay </h4>
+                  <p>You will surely enjoy the luxury of our hotel with an affordable cost and perfect amenities which will provide you a memory to remember.</p>
+                    <p><i class="fa fa-check" style="color: teal;" aria-hidden="true"></i>Decorated room, proper air conditioned</p>
+                    <p><i class="fa fa-check" style="color: teal;" aria-hidden="true"></i>Private balcony</p>
+                  </div>
               </div>
-             </div>
-             <div class="col-md-6 advantage-grid right-w3ls wow zoomIn" data-wow-delay="0.3s">
-              <div class="advantage-block">
-                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                <h4>24 Hour Restaurant</h4>
-                <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates.</p>
-                <p><i class="fa fa-check" aria-hidden="true"></i>24 hours room service</p>
-                <p><i class="fa fa-check" aria-hidden="true"></i>24-hour Concierge service</p>
+              <div class="col-md-6 advantage-grid right-w3ls wow zoomIn" data-wow-delay="0.3s">
+                <div class="advantage-block">
+                  <i class="fa fa-clock-o" style="color: teal;" aria-hidden="true"></i>
+                  <h4>24 Hour Restaurant</h4>
+                  <p>The excitement will last anytime you want and enjoy it with a hundred percent service from our passionate and well-trained crew. </p>
+                    <p><i class="fa fa-check" style="color: teal;" aria-hidden="true"></i>24 hours room service</p>
+                    <p><i class="fa fa-check" style="color: teal;" aria-hidden="true"></i>24-hour Concierge service</p>
+                  </div>
               </div>
-             </div>
             <div class="clearfix"> </div>
-            </div>
           </div>
         </div>
       </div>
-    <!--//sevices-->
+    </div>
+  </section>
+<!--//sevices-->
 
-      
-
-    </section>
 
    <section>
       <div class="container">
@@ -322,7 +315,7 @@
           <div class="col-md-6 order-1">
             <div class="p-5">
               <h2 class="display-4">For those about to rock the Dora...</h2>
-              <p>Wanna have peace yet a wild place to stay ? Dora Hotel offers you to take a rest and enjoy our best luxury and foods that are cook by our Chef masters. Dora Hotel would also like our customers to be a food critique of our different variety of food. So what are you waiting for? Come, take a rest, Party wild, Eat and bury the burdens.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
             </div>
           </div>
         </div>
@@ -365,20 +358,48 @@
       </div>
 
       <!-- CONTACT US -->
-    </section>
-      <div class="q2">
-		    Experience a good stay with us.
-	    </div>
-      <div class="wrapper m-auto" style="">
-        Contact Us
-      </div>
 
-    </section>
+    <!-- contact -->
+    <div class="q2">
+    You will love the amenities we offer.
+  </div>
+<section class="contact-w3ls container" id="contact">
+  
+  <div class="container m-auto p-5 row">
+    <div class="col-lg-12 col-md-12 col-sm-12 contact-w3-agile2" data-aos="flip-left">
+        
+    <div class="col-lg-12 col-md-12 col-sm-12 contact-w3-agile1 text-left" data-aos="flip-right">
+      <h4 class="pb-5">Connect With Us</h4>
+      <p class="contact-agile1"><strong>Phone: </strong></p>
+      <p class="contact-agile1"><strong>Email: </strong> <a href="mailto:name@example.com">INFO@DORAHOTEL.COM</a></p>
+      <p class="contact-agile1"><strong>Address: </strong> </p>
+                                
+      <div class="social-bnr-agileits footer-icons-agileinfo row col-md-6">
+        <ul class="social-icons3 nav p-5">
+          <li><a href="#" class="fa fa-facebook icon-border facebook"> </a></li>     
+        </ul>
+        <ul class="social-icons3 nav p-5">
+          <li><a href="#" class="fa fa-twitter icon-border twitter"> </a></li>
+        </ul>
+        <ul class="social-icons3 nav p-5">
+          <li><a href="#" class="fa fa-google-plus icon-border googleplus"> </a></li>      
+        </ul>
+      </div>
+        <iframe width="600" height="450" frameborder="2" style="border:0;"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDotdOA-DR62SDiQMaJXpYPQc4hxSyFO9M
+    &q=f.+torres+street+davao+city" allowfullscreen>
+        </iframe>
+      </div>
+    <div class="clearfix"></div>
+  </div>
+</section>
+
+
 
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright 2017 &copy; Dora Hotels. All Rights Reserved | Designed by 
+    <footer class="bg-dark">
+      <div class="p-4 container">
+        <p class="m-0 text-center text-white" style="font-weight: normal;">Copyright 2017 &copy; Dora Hotels. All Rights Reserved | Designed by 
           <a href="#" class="dora">DORA</a>
         </p>
       </div>
