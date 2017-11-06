@@ -1,3 +1,4 @@
+
 <?php
 // include('db.php')
 if(isset($_GET["status"])) {
@@ -63,6 +64,7 @@ if(isset($_GET["status"])) {
     <link href="../public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
+    <link href="assets/css/custom-styles.css" rel="stylesheet">
     <link href="../public/css/one-page-wonder.css" rel="stylesheet">
     <link href="../public/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
   <!-- Bootstrap Styles-->
@@ -76,89 +78,95 @@ if(isset($_GET["status"])) {
 </head>
 <body>
     <div id="wrapper" style="background-color: #343a40;">
+      
+      <!-- Navigation -->
         <nav class="navbar-default navbar-side" role="navigation">
+          
             <div class="sidebar-collapse">
-              <h5 class="text-white page-header"> <i class="fa fa-user"></i> Admin</h5>
+              <h5 class="text-white p-4"> <i class="fa fa-user"></i> Administrator </h5>
                 <ul class="nav" id="main-menu">
-
-                    <li>
-                        <a  href="../public/index.php"><i class="fa fa-home"></i> Homepage</a>
-                    </li>
-                    
+                  <li name="stat"><a href="../admin/index.php?status=<?php echo urlencode("Status");?>">
+                    <i class="fa fa-dashboard"></i>Status</a>
+                  </li>
                 </ul>
-
                 <ul class="nav" id="main-menu">
-
-                    <li>
-                        <a href="../admin/index.php?status=<?php echo urlencode("Status");?>">
-                          <i class="fa fa-info-circle"></i>Status</a>
-                    </li>
-                    
+                  <li><a  href="../admin/index.php?room_Booking=<?php echo urlencode("Room Booking");?>">
+                    <i class="fa fa-tasks"></i> Room Booking</a>
+                  </li>
                 </ul>
-
                 <ul class="nav" id="main-menu">
-
-                    <li>
-                        <a  href="../admin/index.php?room_Booking=<?php echo urlencode("Room Booking");?>"><i class="fa fa-tasks"></i> Room Booking</a>
-                    </li>
-                    
+                  <li><a href="../admin/index.php?users=<?php echo urlencode("Users Management");?>">
+                    <i class="fa fa-user"></i> Users</a>
+                  </li>
                 </ul>
-
                 <ul class="nav" id="main-menu">
-
-                    <li>
-                        <a href="../admin/index.php?payment=<?php echo urlencode("Payment");?>"><i class="fa fa-money"></i> Payment</a>
-                    </li>
-                    
+                  <li><a href="../admin/index.php?payment=<?php echo urlencode("Payment Details");?>">
+                    <i class="fa fa-money"></i> Payment</a>
+                  </li>
                 </ul>
-
                 <ul class="nav" id="main-menu">
-
-                    <li>
-                        <a href="../admin/index.php?users=<?php echo urlencode("Users");?>"><i class="fa fa-user"></i> Users</a>
-                    </li>
-                    
+                  <li><a href="../admin/index.php?settings=<?php echo urlencode("Settings");?>">
+                    <i class="fa fa-gear"></i> Settings</a>
+                  </li>
                 </ul>
-
                 <ul class="nav" id="main-menu">
-
-                    <li>
-                        <a href="../admin/index.php?settings=<?php echo urlencode("Settings");?>"><i class="fa fa-edit"></i> Settings</a>
-                    </li>
-                    
+                  <li><a  href="../admin/index.php?logout=<?php echo urlencode("Logout");?>">
+                    <i class="fa fa-sign-out"></i> Log out</a>
+                  </li>
                 </ul>
-
-                <ul class="nav" id="main-menu">
-
-                    <li>
-                        <a  href="../admin/index.php?logout=<?php echo urlencode("Logout");?>"><i class="fa fa-sign-out"></i> Log out</a>
-                    </li>
-                    
-                </ul>
-
-            </div>
-
-        </nav>
-       
+              </div>
+            </nav>
+       <div class="p-3 text-white text-right">
+        <?php 
+          $current_date = date('M-j-Y');
+          echo "Date: " .$current_date;
+        ?>
+        <br>
+        <?php 
+          date_default_timezone_set("Asia/Manila");
+          $current_time = date("h:i:sa");
+          echo "Time: " .$current_time;
+        ?>
+      </div>
         <div id="page-wrapper" >
           <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                <h2 class="page-header">
-                    <?php echo $selected_menu_Status; ?>
+                  <h2 style="font-family: sans-serif;"> DORA HOTEL ONLINE BOOKING MANAGEMENT </h2>
+                <h3 class="page-header pt-5" style="font-family: Monospace;">
+                    <?php echo $selected_menu_Status;?>
                     <?php echo $selected_menu_Payment; ?>
                     <?php echo $selected_menu_RoomBook; ?>
                     <?php echo $selected_menu_Settings; ?>
                     <?php echo $selected_menu_Users; ?>
                     <?php echo $selected_menu_Logout; ?>
-                </h2>
+                </h3>
+
+                <?php 
+                if(isset($selected_menu_Status)){
+                  include("../admin/status.php");
+                }elseif(isset($selected_menu_Payment)){
+                  include("../admin/payment.php");
+                }elseif(isset($selected_menu_RoomBook)){
+                  include("../admin/roombook.php");
+                }elseif(isset($selected_menu_Settings)){
+                  include("../admin/settings.php");
+                }elseif(isset($selected_menu_Users)){
+                  include("../admin/users.php");
+                }elseif(isset($selected_menu_Logout)){
+                  include("../admin/logout.php");
+                }
+
+                 ?>
+
               </div>
-            </div>             
+            </div>          
             
           </div>
        <!-- /. PAGE INNER  -->
             </div>
          <!-- /. PAGE WRAPPER  -->
+
         </div>
      <!-- /. WRAPPER  -->
    
