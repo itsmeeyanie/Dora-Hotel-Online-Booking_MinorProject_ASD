@@ -30,21 +30,6 @@
                                             
                                         </tr>
 										<tr>
-                                            <th>Email</th>
-                                            <th></th>
-                                            
-                                        </tr>
-										<tr>
-                                            <th>Phone Number </th>
-                                            <th></th>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <th>Address </th>
-                                            <th></th>
-                                            
-                                        </tr>
-										<tr>
                                             <th>Type Of the Room </th>
                                             <th></th>
                                             

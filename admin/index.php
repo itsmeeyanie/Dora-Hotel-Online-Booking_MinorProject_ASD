@@ -4,6 +4,7 @@
 if(isset($_GET["status"])) {
   $selected_menu_Status = $_GET["status"];
   $selected_menu_RoomBook = null;
+  $selected_menu_Rooms = null;
   $selected_menu_Payment = null;
   $selected_menu_Users = null;
   $selected_menu_Settings = null;
@@ -11,14 +12,24 @@ if(isset($_GET["status"])) {
 }elseif(isset($_GET["room_Booking"])) {
   $selected_menu_RoomBook = $_GET["room_Booking"];
   $selected_menu_Status = null;
+  $selected_menu_Rooms = null;
   $selected_menu_Payment = null;
   $selected_menu_Users = null;
+  $selected_menu_Settings = null;
+  $selected_menu_Logout =null;
+}elseif(isset($_GET["rooms"])) {
+  $selected_menu_Rooms = $_GET["rooms"];
+  $selected_menu_Status = null;
+  $selected_menu_RoomBook = null;
+  $selected_menu_Users = null;
+  $selected_menu_Payment = null;
   $selected_menu_Settings = null;
   $selected_menu_Logout =null;
 }elseif(isset($_GET["payment"])) {
   $selected_menu_Payment = $_GET["payment"];
   $selected_menu_Status = null;
   $selected_menu_RoomBook = null;
+  $selected_menu_Rooms = null;
   $selected_menu_Users = null;
   $selected_menu_Settings = null;
   $selected_menu_Logout =null;
@@ -26,6 +37,7 @@ if(isset($_GET["status"])) {
   $selected_menu_Users = $_GET["users"];
   $selected_menu_Status = null;
   $selected_menu_RoomBook = null;
+  $selected_menu_Rooms = null;
   $selected_menu_Payment = null;
   $selected_menu_Settings = null;
   $selected_menu_Logout =null;
@@ -33,6 +45,7 @@ if(isset($_GET["status"])) {
   $selected_menu_Settings = $_GET["settings"];
   $selected_menu_Status = null;
   $selected_menu_RoomBook = null;
+  $selected_menu_Rooms = null;
   $selected_menu_Payment = null;
   $selected_menu_Users = null;
   $selected_menu_Logout =null;
@@ -40,12 +53,14 @@ if(isset($_GET["status"])) {
   $selected_menu_Logout = $_GET["logout"];
   $selected_menu_Status = null;
   $selected_menu_RoomBook = null;
+  $selected_menu_Rooms = null;
   $selected_menu_Payment = null;
   $selected_menu_Users = null;
   $selected_menu_Settings = null;
 }else{
   $selected_menu_Status = null;
   $selected_menu_RoomBook = null;
+  $selected_menu_Rooms = null;
   $selected_menu_Payment = null;
   $selected_menu_Users = null;
   $selected_menu_Settings = null;
@@ -95,6 +110,11 @@ if(isset($_GET["status"])) {
                   </li>
                 </ul>
                 <ul class="nav" id="main-menu">
+                  <li><a  href="../admin/index.php?rooms=<?php echo urlencode("Room Availability Checker");?>">
+                    <i class="fa fa-tasks"></i> Available Rooms</a>
+                  </li>
+                </ul>
+                <ul class="nav" id="main-menu">
                   <li><a href="../admin/index.php?users=<?php echo urlencode("Users Management");?>">
                     <i class="fa fa-user"></i> Users</a>
                   </li>
@@ -137,6 +157,7 @@ if(isset($_GET["status"])) {
                     <?php echo $selected_menu_Status;?>
                     <?php echo $selected_menu_Payment; ?>
                     <?php echo $selected_menu_RoomBook; ?>
+                    <?php echo $selected_menu_Rooms; ?>
                     <?php echo $selected_menu_Settings; ?>
                     <?php echo $selected_menu_Users; ?>
                     <?php echo $selected_menu_Logout; ?>
@@ -149,6 +170,8 @@ if(isset($_GET["status"])) {
                   include("../admin/payment.php");
                 }elseif(isset($selected_menu_RoomBook)){
                   include("../admin/roombook.php");
+                }elseif(isset($selected_menu_Rooms)){
+                  include("../admin/rooms.php");
                 }elseif(isset($selected_menu_Settings)){
                   include("../admin/settings.php");
                 }elseif(isset($selected_menu_Users)){

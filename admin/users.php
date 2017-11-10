@@ -17,22 +17,13 @@
 <body>
 	 <!-- /. ROW  -->
 				<?php
-						// include ('db.php');
-						// $sql = "select * from roombook";
-						// $re = mysqli_query($con,$sql);
+						// include ('db_connection.php');
+						// $query = "select * from users";
+						// $users = mysqli_query($connection, $query);
 						// $c =0;
-						// while($row=mysqli_fetch_array($re) )
+						// while($row=mysqli_fetch_array($users))
 						// {
-						// 		$new = $row['stat'];
-						// 		$cin = $row['cin'];
-						// 		$id = $row['id'];
-						// 		if($new=="Not Conform")
-						// 		{
-						// 			$c = $c + 1;
-									
 								
-						// 		}
-						
 						// }
 						
 									
@@ -63,9 +54,8 @@
 	                                            <th>#</th>
 	                                            <th>Name</th>
 	                                            <th>Address</th>
-												<th>Birthday</th>
 												<th>Email</th>
-												<th>Date of Registration</th>
+												<th>Username</th>
 												<th>Status</th>
 												<th>Action</th>
 												
@@ -74,28 +64,19 @@
 		                            <tbody>
 		                                        
 											<?php
-											// $tsql = "select * from roombook";
-											// $tre = mysqli_query($con,$tsql);
-											// while($trow=mysqli_fetch_array($tre) )
+											// $tquery = "select * from users";
+											// $tusers = mysqli_query($connection, $query);
+											// while($trow=mysqli_fetch_array($tusers) )
 											// {	
-											// 	$co =$trow['stat']; 
-											// 	if($co=="Not Conform")
-											// 	{
+												
 											// 		echo"<tr>
 											// 			<th>".$trow['id']."</th>
-											// 			<th>".$trow['FName']." ".$trow['LName']."</th>
-											// 			<th>".$trow['Email']."</th>
-											// 			<th>".$trow['Address']."</th>
-											// 			<th>".$trow['TRoom']."</th>
-											// 			<th>".$trow['Bed']."</th>
-											// 			<th>".$trow['Meal']."</th>
-											// 			<th>".$trow['cin']."</th>
-											// 			<th>".$trow['cout']."</th>
-											// 			<th>".$trow['stat']."</th>
-														
-											// 			<th><a href='roombook.php?rid=".$trow['id']." ' class='btn btn-primary'>Action</a></th>
+											// 			<th>".$trow['fname']." ".$trow['lname']."</th>
+											// 			<th>".$trow['address']."</th>
+											// 			<th>".$trow['email']."</th>
+											// 			<th>".$trow['username']."</th>
 											// 			</tr>";
-											// 	}	
+												
 											
 											// }
 											?>
