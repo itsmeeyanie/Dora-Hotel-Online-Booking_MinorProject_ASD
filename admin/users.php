@@ -1,4 +1,28 @@
+<?php
 
+	define("DB_SERVER", "localhost");
+	define("DB_USER", "dorahotel");
+	define("DB_PASS", "admin");
+	define("DB_NAME", "db_dorahotel");
+
+	$connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+
+	if(mysqli_connect_errno()){
+		die("Database connection failed: " . 
+			mysqli_connect_error() . 
+			"(" . mysqli_connect_errno() . ")"
+		);
+	}
+
+?>
+
+	<?php
+		$query = "select * from users";
+		$result = mysqli_query($connection, $query);
+		if(!$result) {
+			die("Database query failed.");
+		}
+	?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,23 +39,6 @@
     <link href="../admin/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-	 <!-- /. ROW  -->
-				<?php
-						// include ('db_connection.php');
-						// $query = "select * from users";
-						// $users = mysqli_query($connection, $query);
-						// $c =0;
-						// while($row=mysqli_fetch_array($users))
-						// {
-								
-						// }
-						
-									
-									
-
-						
-				?>
-	<!-- ROW -->
 	<div class="row">
 	    <div class="col-md-12">
 	        <div class="panel-default">
@@ -56,31 +63,25 @@
 	                                            <th>Address</th>
 												<th>Email</th>
 												<th>Username</th>
-												<th>Status</th>
 												<th>Action</th>
 												
 	                                        </tr>
 	                                    </thead>
 		                            <tbody>
 		                                        
-											<?php
-											// $tquery = "select * from users";
-											// $tusers = mysqli_query($connection, $query);
-											// while($trow=mysqli_fetch_array($tusers) )
-											// {	
-												
-											// 		echo"<tr>
-											// 			<th>".$trow['id']."</th>
-											// 			<th>".$trow['fname']." ".$trow['lname']."</th>
-											// 			<th>".$trow['address']."</th>
-											// 			<th>".$trow['email']."</th>
-											// 			<th>".$trow['username']."</th>
-											// 			</tr>";
-												
 											
-											// }
-											?>
-		                                        
+												<?php
+													while($row=mysqli_fetch_assoc($result)){
+														echo"<tr>
+														<th>".$row['id']."</th>
+														<th>".$row['fname']." ".$row['lname']."</th>
+														<th>".$row['address']."</th>
+														<th>".$row['email']."</th>
+														<th>".$row['username']."</th>
+														</tr>";
+													}
+												?>
+
 		                            </tbody>
 		                    </table>	
 	                    </div>
@@ -99,7 +100,7 @@
     <script>
         $(document).ready(function() {
             $('#dataTables-example').dataTable({
-                "paging": false
+                "paging": false;
             });
 
         });
@@ -110,4 +111,10 @@
 </body>
 </html>
                     
-               
+    <?php
+		mysqli_free_result($result);
+	?>       
+
+<?php
+	mysqli_close($connection);
+?>
