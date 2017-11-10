@@ -91,7 +91,7 @@
 			}
 	}
 
-	function isLoggedIn() {
+	function confirm_logged_in() {
 		if (isset($_SESSION['user'])) {
 			return true;
 		}else{

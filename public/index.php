@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,143 +30,35 @@
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#" style="font-family: Sweet Pea">Dora Dora</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item"> 
-              <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="reservation.php">My Reservation</a>
-            </li>
-            <li class="nav-item">
-              <button class="btn btn-outline-light" type="button" data-toggle="modal" data-target="#popUpWindow">LOGIN</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <?php include("../includes/header.php"); ?>
 
     <!-- LOGIN MODAL -->
     <div class="modal fade" id="popUpWindow">
       <div class="modal-dialog">
-        <div class="modal-content">
-          
-          <!-- header -->
-          <!-- <div class="modal-header style="background-color: #007bff;">
+        <div class="modal-content panel-default panel">
+        <div class="panel-body">
+          <div class="modal-header" style="background-color: gray;">
+            <h5 class="text-center text-white">LOGIN</h5>
             <button type="button" class="close" data-dismiss="modal">&times</button>
-          </div -->
+                </div>
 
-           <!-- body (form) -->
-           <!-- <div class="modal-body">
-             <form role="form">
-               <div class="form-group">
-                 <input type="email" class="form-control" placeholder="Email">
-               </div>
-               <div class="form-group">
-                 <input type="password" class="form-control" placeholder="Password">
-               </div>
-             </form>
-           </div> -->
+                     <br>
+                          <?php
 
-            <!-- button -->
-           <!--  <div class="modal-footer">
-              <button class="btn btn-primary btn-block">LOGIN</button>
-            </div>
-        </div>
-      </div>
-    </div> -->
-<form>
-    <div class="panel-body">
-      <div class="modal-header" style="background-color: gray;">
-        <h5 class="text-center text-white">LOGIN</h5>
-        <button type="button" class="close" data-dismiss="modal">&times</button>
-      </div>
-          <br>
-                    <form class="form-horizontal" action="reservation.php" method="post">
-                      <!--   {{ csrf_field() }} -->
+                              // if (!isLoggedIn()) {
+                                include("../public/login.php");
+                              // }else{
+                              //   $_SESSION['login'];
+                              // }
 
-                       <!--  <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}"> -->
-                            <!-- <label for="email" class="col-md-4 control-label">Username</label> -->
-
-                            <div class="col-md-8">
-                                <input id="name" name="username" type="email" class="form-control" placeholder="Username" required autofocus>
-
-                               <!--  @if ($errors->has('email')) -->
-                                    <!-- <span class="help-block"> -->
-                                        <!-- <strong>{{ $errors->first('email') }}</strong> -->
-                                   <!--  </span> -->
-                              <!--   @endif -->
-                            </div>
-                       <!--  </div> -->
-                        <br>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <!-- <label for="password" class="col-md-4 control-label">Password</label> -->
-
-                            <div class="col-md-8">
-                                <input type="password" class="form-control" placeholder="Password" required>
-
-                              <!--   @if ($errors->has('password')) -->
-                                    <span class="help-block">
-                                      <!--   <strong>{{ $errors->first('password') }}</strong> -->
-                                    </span>
-                               <!--  @endif -->
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-dark" href="index.php">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                          <br>
-                        <div>
-                         <p>If you don't have an account, click <a href="signup.php">here</a> to Sign Up.</p>
-                        </div>
-                        </div>
-
-                    </form>
+                          ?>
+                        
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-</form>
-
-
-        <!-- Sign up -->
+    
 
 
 
@@ -217,10 +111,10 @@
                          <div class="modal-body">
                            <form role="form" action="reservation.php">
                              <div class="form-group">
-                                CHECK IN: <input type="date" class="form-control">
+                                CHECK IN: <input type="date" name="cin" class="form-control">
                              </div>
                              <div class="form-group">
-                               CHECK OUT: <input type="date" class="form-control" placeholder="Check-out date">
+                               CHECK OUT: <input type="date" class="form-control" name="cout" placeholder="Check-out date">
                              </div>
                              <!-- button -->
                               <div class="modal-footer">
@@ -363,18 +257,20 @@
     <div class="q2">
     You will love the amenities we offer.
   </div>
-<section class="contact-w3ls container" id="contact">
+<section class="contact-w3ls wrapper1" id="contact">
   
-  <div class="container m-auto p-5 row">
-    <div class="col-lg-12 col-md-12 col-sm-12 contact-w3-agile2" data-aos="flip-left">
-        
+  <div class="m-auto p-4 row container" style="float: right;">
     <div class="col-lg-12 col-md-12 col-sm-12 contact-w3-agile1 text-left" data-aos="flip-right">
-      <h4 class="pb-5">Connect With Us</h4>
-      <p class="contact-agile1"><strong>Phone: </strong></p>
+      <h4 class="pb-2">Connect With Us</h4>
+      <p class="contact-agile1"><strong>Phone: </strong>09266994458</p>
       <p class="contact-agile1"><strong>Email: </strong> <a href="mailto:name@example.com">INFO@DORAHOTEL.COM</a></p>
-      <p class="contact-agile1"><strong>Address: </strong> </p>
+      <p class="contact-agile1"><strong>Address: </strong>F. Torres Street, Poblacion District, Davao City </p>
                                 
-      <div class="social-bnr-agileits footer-icons-agileinfo row col-md-6">
+        <iframe width="600" height="450" frameborder="2" style="border:0;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDotdOA-DR62SDiQMaJXpYPQc4hxSyFO9M
+    &q=f.+torres+street+davao+city" allowfullscreen>
+        </iframe>
+
+        <div class="social-bnr-agileits footer-icons-agileinfo row col-md-6">
         <ul class="social-icons3 nav p-5">
           <li><a href="#" class="fa fa-facebook icon-border facebook"> </a></li>     
         </ul>
@@ -385,26 +281,11 @@
           <li><a href="#" class="fa fa-google-plus icon-border googleplus"> </a></li>      
         </ul>
       </div>
-        <iframe width="600" height="450" frameborder="2" style="border:0;"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDotdOA-DR62SDiQMaJXpYPQc4hxSyFO9M
-    &q=f.+torres+street+davao+city" allowfullscreen>
-        </iframe>
-      </div>
-    <div class="clearfix"></div>
   </div>
 </section>
 
-
-
-    <!-- Footer -->
-    <footer class="bg-dark">
-      <div class="p-4 container">
-        <p class="m-0 text-center text-white" style="font-weight: normal;">Copyright 2017 &copy; Dora Hotels. All Rights Reserved | Designed by 
-          <a href="#" class="dora">DORA</a>
-        </p>
-      </div>
-      <!-- /.container -->
-    </footer>
+   <!-- Footer -->
+   <?php include("../includes/footer.php"); ?>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
