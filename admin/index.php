@@ -1,15 +1,6 @@
 
 <?php
-// include('db.php')
-if(isset($_GET["status"])) {
-  $selected_menu_Status = $_GET["status"];
-  $selected_menu_RoomBook = null;
-  $selected_menu_Rooms = null;
-  $selected_menu_Payment = null;
-  $selected_menu_Users = null;
-  $selected_menu_Settings = null;
-  $selected_menu_Logout =null;
-}elseif(isset($_GET["room_Booking"])) {
+if(isset($_GET["room_Booking"])) {
   $selected_menu_RoomBook = $_GET["room_Booking"];
   $selected_menu_Status = null;
   $selected_menu_Rooms = null;
@@ -40,14 +31,6 @@ if(isset($_GET["status"])) {
   $selected_menu_Rooms = null;
   $selected_menu_Payment = null;
   $selected_menu_Settings = null;
-  $selected_menu_Logout =null;
-}elseif(isset($_GET["settings"])) {
-  $selected_menu_Settings = $_GET["settings"];
-  $selected_menu_Status = null;
-  $selected_menu_RoomBook = null;
-  $selected_menu_Rooms = null;
-  $selected_menu_Payment = null;
-  $selected_menu_Users = null;
   $selected_menu_Logout =null;
 }elseif(isset($_GET["logout"])) {
   $selected_menu_Logout = $_GET["logout"];
@@ -99,16 +82,19 @@ if(isset($_GET["status"])) {
           
             <div class="sidebar-collapse">
               <h5 class="text-white p-4"> <i class="fa fa-user"></i> Administrator </h5>
-                <ul class="nav" id="main-menu">
-                  <li name="stat"><a href="../admin/index.php?status=<?php echo urlencode("Status");?>">
-                    <i class="fa fa-dashboard"></i>Status</a>
-                  </li>
-                </ul>
+                
                 <ul class="nav" id="main-menu">
                   <li><a  href="../admin/index.php?room_Booking=<?php echo urlencode("Room Booking");?>">
                     <i class="fa fa-tasks"></i> Room Booking</a>
                   </li>
                 </ul>
+
+                <ul class="nav" id="main-menu">
+                  <li><a href="../admin/index.php?payment=<?php echo urlencode("Payment Details");?>">
+                    <i class="fa fa-money"></i> Payment</a>
+                  </li>
+                </ul>
+
                 <ul class="nav" id="main-menu">
                   <li><a  href="../admin/index.php?rooms=<?php echo urlencode("Room Availability Checker");?>">
                     <i class="fa fa-tasks"></i> Available Rooms</a>
@@ -119,16 +105,7 @@ if(isset($_GET["status"])) {
                     <i class="fa fa-user"></i> Users</a>
                   </li>
                 </ul>
-                <ul class="nav" id="main-menu">
-                  <li><a href="../admin/index.php?payment=<?php echo urlencode("Payment Details");?>">
-                    <i class="fa fa-money"></i> Payment</a>
-                  </li>
-                </ul>
-                <ul class="nav" id="main-menu">
-                  <li><a href="../admin/index.php?settings=<?php echo urlencode("Settings");?>">
-                    <i class="fa fa-gear"></i> Settings</a>
-                  </li>
-                </ul>
+                
                 <ul class="nav" id="main-menu">
                   <li><a  href="../admin/index.php?logout=<?php echo urlencode("Logout");?>">
                     <i class="fa fa-sign-out"></i> Log out</a>
@@ -154,32 +131,26 @@ if(isset($_GET["status"])) {
                 <div class="col-md-12">
                   <h2 style="font-family: sans-serif;"> DORA HOTEL ONLINE BOOKING MANAGEMENT </h2>
                 <h3 class="page-header pt-5" style="font-family: Monospace;">
-                    <?php echo $selected_menu_Status;?>
+                    
                     <?php echo $selected_menu_Payment; ?>
                     <?php echo $selected_menu_RoomBook; ?>
                     <?php echo $selected_menu_Rooms; ?>
-                    <?php echo $selected_menu_Settings; ?>
                     <?php echo $selected_menu_Users; ?>
                     <?php echo $selected_menu_Logout; ?>
                 </h3>
 
                 <?php 
-                if(isset($selected_menu_Status)){
-                  include("../admin/status.php");
-                }elseif(isset($selected_menu_Payment)){
-                  include("../admin/payment.php");
-                }elseif(isset($selected_menu_RoomBook)){
-                  include("../admin/roombook.php");
-                }elseif(isset($selected_menu_Rooms)){
-                  include("../admin/rooms.php");
-                }elseif(isset($selected_menu_Settings)){
-                  include("../admin/settings.php");
-                }elseif(isset($selected_menu_Users)){
-                  include("../admin/users.php");
-                }elseif(isset($selected_menu_Logout)){
-                  include("../admin/logout.php");
-                }
-
+                    if(isset($selected_menu_Payment)){
+                      include("../admin/payment.php");
+                    }elseif(isset($selected_menu_RoomBook)){
+                      include("../admin/roombook.php");
+                    }elseif(isset($selected_menu_Rooms)){
+                      include("../admin/rooms.php");
+                    }elseif(isset($selected_menu_Users)){
+                      include("../admin/users.php");
+                    }elseif(isset($selected_menu_Logout)){
+                      include("../admin/logout.php");
+                    }
                  ?>
 
               </div>
