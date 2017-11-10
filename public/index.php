@@ -1,3 +1,6 @@
+<?php
+  // include("../includes/config.php");
+?>
 
 
 <!DOCTYPE html>
@@ -100,32 +103,9 @@
 					    </div>
               <div class="card-img-overlay">
                 <div class="container text-center">
-                  <button class="btn booknow_button btn-dark" type="button" data-toggle="modal" data-target="#modal-1">BOOK NOW</button>
-                  <div class="modal" id="modal-1">
-                    <div class="modal-dialog ">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h4 class="modal-title">Book Your Stay With Us</h4>
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                         <div class="modal-body">
-                           <form role="form" action="reservation.php">
-                             <div class="form-group">
-                                CHECK IN: <input type="date" name="cin" class="form-control">
-                             </div>
-                             <div class="form-group">
-                               CHECK OUT: <input type="date" class="form-control" name="cout" placeholder="Check-out date">
-                             </div>
-                             <!-- button -->
-                              <div class="modal-footer">
-                                <button class="btn btn-secondary btn-block">SUBMIT</button>
-                              </div>
-                           </form>
-                         </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  <a href="../public/reservation.php">
+                    <button class="btn booknow_button btn-dark" type="button">BOOK NOW</button>
+                  </a>
               </div>
     				</div>
 
