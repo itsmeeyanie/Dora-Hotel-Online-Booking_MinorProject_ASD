@@ -21,7 +21,6 @@
 			if($result) {
 				$logged_in_user_id = mysqli_insert_id($connection);
 				$_SESSION['user'] = getUserById($logged_in_user_id); // put logged in user in session
-				// $_SESSION['success']  = "You are now logged in";
 				redirect_to("../public/index.php");
 					
 			}else{
@@ -43,19 +42,16 @@
 	function reservation(){
 		global $connection;
 		$fname = mysqli_real_escape_string($connection, $_POST['fullName']);
-		$email = mysqli_real_escape_string($connection, $_POST['email']);
 		$phone = mysqli_real_escape_string($connection, $_POST['phone']);
-		$troom = mysqli_real_escape_string($connection, $_POST['troom']);
-		$bed = mysqli_real_escape_string($connection, $_POST['bed']);
-		$nroom = mysqli_real_escape_string($connection, $_POST['nroom']);
-		$meal = mysqli_real_escape_string($connection, $_POST['meal']);
+		$rname = mysqli_real_escape_string($connection, $_POST['rName']);
+		$rtype = mysqli_real_escape_string($connection, $_POST['rType']);
 		$cin = mysqli_real_escape_string($connection, $_POST['cin']);
 		$cout = mysqli_real_escape_string($connection, $_POST['cout']);
 
-		$query = "INSERT INTO roombook(fullName, email, phone, troom, bed, nroom, meal, cin, cout) values ('{$fname}', '{$email}', '{$phone}', '{$troom}', '{$bed}', '{$nroom}', '{$meal}', '{$cin}', '{$cout}')";
+		$query = "INSERT INTO roombook(fullName, phone, rName, rType, cin, cout) values ('{$fname}', '{$phone}', '{$rname}', '{$rtype}', '{$cin}', '{$cout}')";
 		$result = mysqli_query($connection, $query);
 		if($result) {
-			redirect_to("../public/index.php");
+			// redirect_to("../public/index.php");
 			echo "<script type='text/javascript'> alert('Your reservation is successful!')</script>";
 		}else{
 			die("Database query failed. " . mysqli_error($connection));
@@ -77,12 +73,10 @@
 				if ($logged_in_user['user_type'] == 'admin') {
 					$_SESSION['user'] = $logged_in_user;
 					$_SESSION['success']  = "You are now logged in";
-					echo "success";
 					redirect_to("../admin/index.php");		  
 				}else{
 					$_SESSION['user'] = $logged_in_user;
 					$_SESSION['success']  = "You are now logged in";
-					echo "success";
 					redirect_to("../public/index.php");
 				}
 			}else {
