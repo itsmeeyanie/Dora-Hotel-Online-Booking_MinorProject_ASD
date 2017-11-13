@@ -27,7 +27,13 @@
 <body>
 
     <!-- Navigation -->
-    <?php include("../includes/header.php"); ?>
+    <?php
+        if (confirm_logged_in()) {
+          include("../includes/nav-login.php");
+        }else{
+          include("../includes/header.php");
+        }
+    ?>
     
 
 <section style="background-color: rgb( 230, 230, 230 );">
@@ -46,51 +52,27 @@
                         <label>Full Name *</label>
                         <input type="text" class="form-control" name="fullName" required="">
                     </div>
-                    <div class="form-group">
-                        <label>Email *</label>
-                            <input type="text" class="form-control" name="email" required="">
-                    </div>
+                    
                     <div class="form-group">
                         <label>Phone *</label>
                             <input type="text" class="form-control" name="phone" required="">
                     </div>
 
                     <div class="form-group">
+                      <label>Room Name</label>
+                        <input type="text" name="rName" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
                       <label>Type Of Room *</label>
-                        <select name="troom"  class="form-control" required>
+                        <select name="rType"  class="form-control" required>
                           <option value selected ></option>
                           <option value="Superior Room">SUPERIOR ROOM</option>
                           <option value="Deluxe Room">DELUXE ROOM</option>
-                          <option value="Single Room">SINGLE ROOM</option>
+                          <option value="Business Class">SINGLE ROOM</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                      <label>Bedding Type</label>
-                        <select name="bed" class="form-control" required>
-                          <option value selected ></option>
-                          <option value="Single">Single</option>
-                          <option value="Double">Double</option>
-                          <option value="Triple">Triple</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                      <label>Number of Rooms *</label>
-                          <select name="nroom" class="form-control" required>
-                            <option value selected ></option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                          </select>
-                    </div>
-                    <div class="form-group">
-                      <label>Amenities</label>
-                          <select name="meal" class="form-control" required>
-                            <option value selected ></option>
-                            <option value="Room only">Room only</option>
-                            <option value="Breakfast">Breakfast</option>
-                            <option value="Half Board">Half Board</option>
-                            <option value="Full Board">Full Board</option>
-                          </select>
-                    </div>
+
                     <div class="form-group">
                       <label>Check-In</label>
                         <input name="cin" type ="date" class="form-control" value="" required="">
@@ -113,6 +95,48 @@
 
 			
 </section>
+
+ <!-- LOGIN MODAL -->
+    <div class="modal fade" id="popUpWindow">
+      <div class="modal-dialog">
+        <div class="modal-content panel">
+        <div class="panel-body p-2">
+          <div class="panel-heading modal-header" style="background-color: gray;">
+            <h5 class="text-center text-white">LOGIN</h5>
+            <button type="button" class="close" data-dismiss="modal">&times</button>
+                </div>
+
+                     <br>
+                      <form class="form-horizontal" action="../includes/config.php" method="post">
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <input name="username" type="text" class="form-control" placeholder="Username" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <input type="password" name="password" class="form-control" placeholder="Password" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button type="submit" name="login" value="Submit" class="btn btn-dark">
+                                        Login
+                                    </button>
+                                </div>
+
+                            <br>
+                             <p class="p-3">If you don't have an account, click <a href="signup.php">here</a> to Sign Up.</p>
+                            </div>
+                          </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <!-- Footer -->
     <?php include("../includes/footer.php"); ?>

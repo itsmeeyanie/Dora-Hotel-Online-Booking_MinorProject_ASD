@@ -27,8 +27,14 @@
   </head>
 <body>
 
-    <!-- Navigation -->
-    <?php include("../includes/header.php"); ?>
+     <!-- Navigation -->
+    <?php
+        if (confirm_logged_in()) {
+          include("../includes/nav-login.php");
+        }else{
+          include("../includes/header.php");
+        }
+    ?>
 
     <!-- FORM -->
 <section class="col-md-12 pt-5 pb-5" style="background-color: rgb( 230, 230, 230 );">
