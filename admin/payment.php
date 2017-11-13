@@ -38,14 +38,12 @@
                                     <thead>
                                         <tr>
                                             <th>Name</th>
+                                            <th>Room</th>
                                             <th>Room type</th>
-                                            <th>Bed Type</th>
+                                            <th>Room Rate</th>
                                             <th>Check in</th>
                                             <th>Check out</th>
-                                            <th>No. of Room</th>
-                                            <th>Meal Type</th>
                                              
-                                            <th>Total Cost</th>
                                             <th>Print</th>
                                         </tr>
                                     </thead>

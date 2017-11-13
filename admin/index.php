@@ -1,6 +1,14 @@
 
 <?php
-if(isset($_GET["room_Booking"])) {
+if(isset($_GET["status"])) {
+  $selected_menu_Status = $_GET["status"];
+  $selected_menu_RoomBook = null;
+  $selected_menu_Rooms = null;
+  $selected_menu_Payment = null;
+  $selected_menu_Users = null;
+  $selected_menu_Settings = null;
+  $selected_menu_Logout =null;
+}elseif(isset($_GET["room_Booking"])) {
   $selected_menu_RoomBook = $_GET["room_Booking"];
   $selected_menu_Status = null;
   $selected_menu_Rooms = null;
@@ -84,8 +92,20 @@ if(isset($_GET["room_Booking"])) {
               <h5 class="text-white p-4"> <i class="fa fa-user"></i> Administrator </h5>
                 
                 <ul class="nav" id="main-menu">
+                  <li><a  href="../admin/index.php?status=<?php echo urlencode("Status");?>">
+                    <i class="fa fa-bell"></i> Status</a>
+                  </li>
+                </ul>
+
+                <ul class="nav" id="main-menu">
                   <li><a  href="../admin/index.php?room_Booking=<?php echo urlencode("Room Booking");?>">
-                    <i class="fa fa-tasks"></i> Room Booking</a>
+                    <i class="fa fa-dashboard"></i> Room Booking</a>
+                  </li>
+                </ul>
+
+                <ul class="nav" id="main-menu">
+                  <li><a  href="../admin/index.php?rooms=<?php echo urlencode("Room Availability Checker");?>">
+                    <i class="fa fa-tasks"></i> Rooms</a>
                   </li>
                 </ul>
 
@@ -95,11 +115,6 @@ if(isset($_GET["room_Booking"])) {
                   </li>
                 </ul>
 
-                <ul class="nav" id="main-menu">
-                  <li><a  href="../admin/index.php?rooms=<?php echo urlencode("Room Availability Checker");?>">
-                    <i class="fa fa-tasks"></i> Available Rooms</a>
-                  </li>
-                </ul>
                 <ul class="nav" id="main-menu">
                   <li><a href="../admin/index.php?users=<?php echo urlencode("Users Management");?>">
                     <i class="fa fa-user"></i> Users</a>
@@ -132,6 +147,7 @@ if(isset($_GET["room_Booking"])) {
                   <h2 style="font-family: sans-serif;"> DORA HOTEL ONLINE BOOKING MANAGEMENT </h2>
                 <h3 class="page-header pt-5" style="font-family: Monospace;">
                     
+                    <?php echo $selected_menu_Status ?>
                     <?php echo $selected_menu_Payment; ?>
                     <?php echo $selected_menu_RoomBook; ?>
                     <?php echo $selected_menu_Rooms; ?>
@@ -140,7 +156,10 @@ if(isset($_GET["room_Booking"])) {
                 </h3>
 
                 <?php 
-                    if(isset($selected_menu_Payment)){
+                    
+                     if(isset($selected_menu_Status)){
+                      include("../admin/status.php");
+                    }elseif(isset($selected_menu_Payment)){
                       include("../admin/payment.php");
                     }elseif(isset($selected_menu_RoomBook)){
                       include("../admin/roombook.php");
@@ -149,7 +168,7 @@ if(isset($_GET["room_Booking"])) {
                     }elseif(isset($selected_menu_Users)){
                       include("../admin/users.php");
                     }elseif(isset($selected_menu_Logout)){
-                      include("../admin/logout.php");
+                      include("../includes/logout.php");
                     }
                  ?>
 

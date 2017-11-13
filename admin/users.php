@@ -77,7 +77,8 @@
 														<th>".$row['fname']." ".$row['lname']."</th>
 														<th>".$row['address']."</th>
 														<th>".$row['email']."</th>
-														<th>".$row['username']."</th>
+														<th>".$row['username']."</th>";
+														echo "<td><button class=\"btn btn-success\"> Archive </button></td>
 														</tr>";
 													}
 												?>

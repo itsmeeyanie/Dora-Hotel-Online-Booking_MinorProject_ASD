@@ -25,9 +25,24 @@
 	?>
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrator	</title>
+    <!-- Bootstrap Styles-->
+    <link href="../admin/assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="../admin/assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="../admin/assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- TABLE STYLES-->
+    <link href="../admin/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+</head>
 <body>
+	 <!-- /. ROW  -->
+				
+	<!-- ROW -->
 	<div class="row">
 	    <div class="col-md-12">
 	        <div class="panel-default">
@@ -36,7 +51,7 @@
 						<div class="panel">
 	                        <div class="panel-heading" style="background-color: #17a2b8; ">
 	                            <h4 class="panel-title" style="color: white; font-weight: bold;">
-	                            	Room Booking Information <span class="badge"><!-- <?php echo $c ; ?> --></span>
+	                            	New Room Bookings <span class="badge"><!-- <?php echo $c ; ?> --></span>
 	                            </h4>
 	                        </div>
 	            <div id="collapseTwo" class="panel-collapse in" style="height: auto;">
@@ -45,22 +60,23 @@
 	                     <div class="panel-body">
 	                        <div class="table-responsive">
 	                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                	<thead>
-                                    	<tr>
-                                            <th>#</th>
-                                            <th>Name</th>
-                                            <th>Contact</th>
-                                            <th>Room Name</th>
-                                            <th>Room type</th>
-                                            <th>Check-in Date</th>
-                                            <th>Check-out Date</th>
-                                            <th>Status Level</th>
-                                            
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-		                                <?php
-											while($row=mysqli_fetch_assoc($result)){
+	                                    <thead>
+	                                        <tr>
+	                                            <th>#</th>
+	                                            <th>Name</th>
+	                                            <th>Contact</th>
+	                                            <th>Room Name</th>
+	                                            <th>Room type</th>
+	                                            <th>Check-in Date</th>
+	                                            <th>Check-out Date</th>
+												<th>Action</th>
+												
+	                                        </tr>
+	                                    </thead>
+		                            <tbody>
+		                                        
+											<?php
+												while($row=mysqli_fetch_assoc($result)){
 												echo"<tr>
 													<th>".$row['id']."</th>
 													<th>".$row['fullName']."</th>
@@ -69,30 +85,22 @@
 													<th>".$row['rType']."</th>
 													<th>".$row['cin']."</th>
 													<th>".$row['cout']."</th>";
-													
-													if($row['status']){
-														echo "<th>"."Confirmed"."</th>";
-													}else{
-														echo "<th>"."Not yet"."</th>";
-													}
-													echo "</tr>";
+													echo "<td><button class=\"btn btn-success\"> Confirm </button></td>
+													</tr>";
 												}
 											?>
-											<!-- <th><input type="submit" name="co" value="Confirm" class="btn btn-success"></th> -->
-
+		                                        
 		                            </tbody>
-                                    
-                                </table>
+		                    </table>	
 	                    </div>
 	                </div>
 	            </div>
 			</div>
 	    </div>
 	</div>
-
 	<!-- /. ROW  -->
 
-	
+
 	<script src="../admin/assets/js/jquery-1.10.2.js"></script>
     
      <!-- DATA TABLE SCRIPTS -->
@@ -104,18 +112,17 @@
             });
 
         });
-    </script>				
+    </script>
 
 
 
 </body>
-
 </html>
-
-	<?php
-		mysqli_free_result($result);
-	?>
+                    
+<?php
+	mysqli_free_result($result);
+?>
 
 <?php
 	mysqli_close($connection);
-?>
+?>       

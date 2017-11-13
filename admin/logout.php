@@ -8,5 +8,7 @@
 <?php  
 	session_destroy();
 	$_SESSION['user'] = null;
-	redirect_to("../public/login.php");
+	echo "<script type='text/javascript'> alert('Logged out!')</script>";
+
+	redirect_to("../public/index.php");
 ?>
