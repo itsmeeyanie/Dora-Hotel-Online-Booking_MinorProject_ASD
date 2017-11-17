@@ -65,7 +65,7 @@
 
                     <div class="form-group">
                       <label>Type Of Room *</label>
-                        <select name="rType"  class="form-control" required>
+                        <select name="rType"  class="form-control" required="">
                           <option value selected ></option>
                           <option value="Superior Room">SUPERIOR ROOM</option>
                           <option value="Deluxe Room">DELUXE ROOM</option>
@@ -75,7 +75,7 @@
 
                     <div class="form-group">
                       <label>Room Name</label>
-                        <input type="text" name="rName" class="form-control" required>
+                        <input type="text" name="rName" class="form-control" required="">
                     </div>
 
                     <div class="form-group">

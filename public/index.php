@@ -77,15 +77,15 @@ section {
                 </div>
 
                      <br>
-                      <form class="form-horizontal" action="../includes/config.php" method="post">
+                      <form action="../includes/config.php" method="post">
                             <div class="form-group">
                                 <div class="col-md-8">
-                                    <input name="username" type="text" class="form-control" placeholder="Username" value="">
+                                    <input name="username" type="text" class="form-control" placeholder="Username" value="" required="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-8">
-                                    <input type="password" name="password" class="form-control" placeholder="Password" value="">
+                                    <input type="password" name="password" class="form-control" placeholder="Password" value="" required="">
                                 </div>
                             </div>
 

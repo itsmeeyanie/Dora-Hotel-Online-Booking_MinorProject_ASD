@@ -188,7 +188,6 @@
 		$rrate = mysqli_real_escape_string($connection, $_POST['rrate']);
 		$stat = mysqli_real_escape_string($connection, $_POST['status']);
 
-
 		$query = "UPDATE rooms set rName='$rname', rType='$rtype', rRate='$rrate', status='$stat' WHERE id='$id'";
 		$result = mysqli_query($connection, $query);
 		if($result) {
@@ -248,8 +247,8 @@
 					redirect_to("../public/index.php");
 				}
 			}else {
-				echo "Wrong username/password combination";
-
+				echo "<script type='text/javascript'> alert('Wrong username/password combination')</script>";
+				// redirect_to("../public/index.php");
 			}
 	}
 

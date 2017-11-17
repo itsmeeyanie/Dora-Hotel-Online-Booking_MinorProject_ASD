@@ -1,4 +1,4 @@
-<?php include("../includes/session.php") ?>
+
   <!-- FontAwesome Styles-->
     <link href="../admin/assets/css/font-awesome.css" rel="stylesheet" />
 

@@ -69,7 +69,8 @@
 <head>
   <title></title>
   <!-- Bootstrap core CSS -->
-    <link href="../admin/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 
@@ -134,10 +135,7 @@
                   <div class="panel-group" id="accordion">
             <div class="panel">
               <div class="panel-heading p-4" style="background-color: #17a2b8; ">
-                              
-                          </div>
-                          
-              
+              </div>
                   <div class="panel-body">
                       <div class="panel panel-default">
                        <div class="panel-body">
@@ -156,20 +154,25 @@
                                     <tbody>
                                     <?php
                       while($row=mysqli_fetch_assoc($result)){
+                        $id = $row['id'];
+                        $rname = $row['rName'];
+                        $rtype = $row['rType'];
+                        $rrate = $row['rRate'];
+                        $stat = $row['status'];
+
                         echo"<tr>
-                          <td>".$row['id']."</td>
-                          <td>".$row['rName']."</td>
-                          <td>".$row['rType']."</td>
-                          <td>".$row['rRate']."</td>";
+                          <td>".$id."</td>
+                          <td>".$rname."</td>
+                          <td>".$rtype."</td>
+                          <td>".$rrate."</td>";
                           
-                          if($row['status']){
+                          if($stat){
                             echo "<td>"."Occupied"."</td>";
                           }else{
                             echo "<td>"."Available"."</td>";
                           }
 
-                          // echo "<td><button class=\"btn btn-success\" data-toggle=\"modal\" data-target=\"#modalEdit\"> Edit </button></td>
-                          echo "<td><input class=\"btn btn-success edit-data\" type=\"button\" name=\"edit\" value=\"Edit\" id=".$row['id'].">Edit</input></td>
+                          echo "<td><input onclick=\"document.getElementById('id01').style.display='block'\" class=\"btn btn-success edit-data\" type=\"button\" name=\"edit\" value=\"Edit\" id=".$id."></input></td>
                           </tr>";
                         }
                       ?>
@@ -183,82 +186,88 @@
           </div>
       </div>
 
-      <!-- Update MODAL -->
+<!-- Modal content-->
 
-
-    <div class=\"row modal fade\" id=\"modalEdit\">
-        <div class=\"modal-dialog\">
-        <div class=\"modal-content panel\">
-        <div class=\"panel-body p-2\">
-        <div class=\"panel-heading modal-header\" style=\"background-color: gray;\">
-            <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times</button>
-                </div>
-    <form class=\"form-horizontal\" action=\"../includes/config.php\" method=\"post\">
-                          <div class=\"form-group\">
-                                <div class=\"col-md-8\">
-                                    <input name=\"id\" class=\"form-control\" value=".$row['id']." readonly>
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content col-md-4 w3-display-middle">
+      <div class="modal-header">
+        <h4 class="modal-title">Room Details</h4>
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+      </div>
+        <div class="w3-container">
+                      <form class="form-horizontal" action="../includes/config.php" method="post">
+                          <div class="form-group">
+                                <div class="col-md-12">
+                                    <input name="id" class="form-control" value="<?php echo $id; ?>">
                                 </div>
                             </div>
-                            <div class=\"form-group\">
-                                <div class=\"col-md-8\">
-                                    <input name=\"rname\" class=\"form-control\" value=".$row['rNate'].">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input name="rname" class="form-control" value="<?php echo $rname; ?>">
                                 </div>
                             </div>
-                            <div class=\"form-group\">
-                                <div class=\"col-md-8\">
-                                    <input name=\"rtype\" class=\"form-control\" value=".$row['rType'].">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input name="rtype" class="form-control" value="<?php echo $rtype; ?>">
                                 </div>
                             </div>
-                            <div class=\"form-group\">
-                                <div class=\"col-md-8\">
-                                    <input name=\"rrate\" class=\"form-control\" value=".$row['rRate'].">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input name="rrate" class="form-control" value="<?php echo $rrate; ?>">
                                 </div>
                             </div>
-                            <div class=\"form-group\">
-                                <div class=\"col-md-8\">
-                                    <input name=\"status\" class=\"form-control\" value=".$row['status'].">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input name="status" class="form-control" value="<?php echo $stat; ?>">
                                 </div>
                             </div>
-                            <div class=\"form-group\">
-                                <div class=\"col-md-8 col-md-offset-4\">
-                                    <button type=\"submit\" name=\"edit\" value=\"Submit\" class=\"btn btn-dark\">
+                            <div class="form-group">
+                                <div class="col-md-12 col-md-offset-4">
+                                    <button type="submit" name="edit" value="Submit" class="btn btn-dark">
                                         Update
                                     </button>
                                 </div>
                             </div>
                         </form>
-                    </div>
-                </div>
-            </div>
+                  </div>
+        <div class="modal-footer">
+          
         </div>
+      </div>
 
-
-           <script>
-        $(document).ready(function(){
-          $(document).on('click', '.edit-data', function(){
-            var users_id = $(this).attr("id");
-            $.ajax({
-              url:"fetch.php",
-              method:"POST",
-              data:{users_id:users_id},
-              data-type:"json",
-              success:function(data){
-                $('#rname').val(data.rname);
-                $('#rtype').val(data.rtype);
-                $('#rrate').val(data.rrate);
-                $('#status').val(data.status);
-              }
-
-            });
-
-          });
-        });
-
-      </script>
-         
-    
-                      
+        
     </div>
+  </div>
+
+  <!-- Update MODAL -->
+
+
+    
+  
+<!--  <script>  
+ $(document).ready(function(){  
+
+      $(document).on('click', function(){  
+           var employee_id = $(this).attr("id");  
+           $.ajax({  
+                url:"../includes/config.php",  
+                method:"POST",  
+                data:{employee_id:employee_id},  
+                dataType:"json",  
+                success:function(data){  
+                     $('#id').val(data.id);  
+                     $('#rname').val(data.rname);  
+                     $('#rtype').val(data.rtype);  
+                     $('#rrate').val(data.rrate);  
+                     $('#status').val(data.status);   
+                     $('#edit').val("edit");  
+                     $('#id01').modal('show');  
+                }  
+           });  
+      });  
+ });  
+ </script> -->
+</div>
     
 </body>
 </html>
