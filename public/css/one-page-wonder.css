@@ -1,8 +1,3 @@
-/*!
- * Start Bootstrap - One Page Wonder (https://startbootstrap.com/template-overviews/one-page-wonder)
- * Copyright 2013-2017 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-one-page-wonder/blob/master/LICENSE)
- */
 
 body {
   padding-top: 54px;
@@ -147,7 +142,6 @@ img{
 	font-size: 25px;
 }
 
-
 .booknow_button {
 	width: 12rem;
 	height: 4rem;
@@ -208,8 +202,6 @@ h3.title-w3-agileits {
 .advantage-block h4 {
     font-size: 1.5em;
     color: #fff;
-    margin: 0.5em 0em 0.5em 0em;
-    text-transform: capitalize;
     letter-spacing: 1px;
 }
 .advantage-block p {
@@ -245,3 +237,375 @@ h3.title-w3-agileits {
     font-size: 13px;
     margin-right: 10px;
 }
+
+/*--header -top--*/
+.social-bnr-agileits{
+	float:left;
+	margin-left:1em;
+}
+/*--social-icons--*/
+ul.social-icons3 {
+    display: block;
+    padding: 0;
+    margin-top: .55em;
+}
+.social-icons3 li{
+	display:inline-block;
+}
+.social-icons3 li a{  
+    display: block;
+    height: 30px;
+    width: 30px;
+    margin-right: 1em;
+    -webkit-transition: .5s all;
+    transition: .5s all;
+    -moz-transition: .5s all;
+	margin-right: 1em;
+	-webkit-transition: .5s all;
+    transition: .5s all;
+    -moz-transition: .5s all;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+    -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+    -ms-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+    line-height: 30px;
+	color:#fff;
+	text-align:center;
+}
+.social-icons3 li a.fa.fa-facebook.icon-border.facebook{
+	 background:#4D669C;
+}
+.social-icons3 li a.fa.fa-twitter.icon-border.twitter{
+	 background:#1da1f2;
+}
+.social-icons3 li a.fa.fa-google-plus.icon-border.googleplus{
+	 background:#d34836;
+}
+.social-icons3 li a.fa.fa-rss.icon-border.rss{
+	 background:#ee802f;
+}
+.social-icons3 li a:hover{
+	text-decoration:none;
+	opacity:0.8;
+}
+.contact-bnr-w3-agile {
+    float: right;
+}
+.contact-bnr-w3-agile ul li {
+    list-style: none;
+    display: inline-block;
+       /*border-left: 1px solid #0066b2;*/
+    padding: 13px 20px;
+        color: #101010;
+	font-size:14px;
+	 transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+.contact-bnr-w3-agile ul li a{
+	    color: #101010;
+	text-decoration:none;
+	 transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+	text-transform: lowercase;
+	font-size: 15px;
+}
+.contact-bnr-w3-agile ul li a:hover{
+	 color: #0066b2;
+	 transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+.contact-bnr-w3-agile ul li i {
+       color: #000000;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+/*-- banner-bottom --*/
+.banner-bottom{
+	text-align:center;
+}
+.agileits_banner_bottom{
+	width: 70%;
+    margin: 0 auto;
+}
+.banner-bottom h3 {
+    font-size: 1em;
+    color: #ffce14;
+    line-height: 2.3em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+.banner-bottom h3 span {
+    display: block;
+    font-size: 25px!important;
+    color: #000000;
+    font-weight: 500;
+}
+.banner-bottom h3 i{
+	font-weight:300;
+}
+.w3ls_banner_bottom_grids{
+	margin:3em 0 0;
+}
+.w3l_banner_bottom_grid{
+	padding:2em;
+	text-align:center;
+	border:2px solid #999;
+}
+/*-- grid-effect --*/
+/* General grid styles */
+.cbp-ig-grid {
+	list-style: none;
+	padding:0;
+	margin: 0;
+}
+
+/* Clear floats */
+.cbp-ig-grid:before, 
+.cbp-ig-grid:after { 
+	content: " "; 
+	display: table; 
+}
+
+.cbp-ig-grid:after { 
+	clear: both; 
+}
+
+/* grid item */
+.cbp-ig-grid li {
+	width: 25%;
+    float: left;
+    text-align: center;
+    border-left: 1px solid #cfdbf3;
+}
+
+.cbp-ig-grid li:last-child{
+	border-right: 1px solid #cfdbf3;
+}
+
+.w3_grid_effect {
+    padding: 2em;
+    background: rgba(52, 74, 113, 0.09);
+}
+
+/* anchor style */
+.cbp-ig-grid li > a {
+	display: block;
+	height: 100%;
+	color: #343a40;
+	-webkit-transition: background 0.2s;
+	-moz-transition: background 0.2s;
+	transition: background 0.2s;
+}
+
+/* the icon with pseudo class for icon font */
+.cbp-ig-icon {
+	padding: 1.5em 0 0;
+	display: block;
+	-webkit-transition: -webkit-transform 0.2s;
+	transition: -moz-transform 0.2s;
+	transition: transform 0.2s;
+}
+
+.cbp-ig-icon:before {
+	font-family:FontAwesome;
+	font-size: 5em;
+	speak: none;
+	color: #343a40;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+.w3_road:before {
+	content: "\f236";
+}
+
+.w3_cube:before {
+	content: "\f1ad";
+}
+
+.w3_users:before {
+	content: "\f0f4";
+}
+
+.w3_wifi:before {
+	content: "\f1eb"
+}
+
+/* title element */
+.cbp-ig-grid .cbp-ig-title {
+	margin: 20px 0 10px 0;
+    padding: 20px 0 0 0;
+    font-size: 1em;
+    position: relative;
+    -webkit-transition: -webkit-transform 0.2s;
+    -moz-transition: -moz-transform 0.2s;
+    transition: transform 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+	color:#343a40;
+}
+
+.cbp-ig-grid .cbp-ig-title:before {
+	content: '';
+	position: absolute;
+	background:#868e96;
+	width: 160px;
+	height: 6px;
+	top: 0px;
+	left: 50%;
+	margin: -10px 0 0 -80px;
+	-webkit-transition: margin-top 0.2s; /* top or translate does not seem to work in Firefox */
+	-moz-transition: margin-top 0.2s;
+	transition: margin-top 0.2s;
+}
+
+.cbp-ig-grid .cbp-ig-category {
+	text-transform: uppercase;
+	display: inline-block;
+	font-size: 1em;
+	letter-spacing: 1px;
+	color: #fff;
+	-webkit-transform: translateY(10px);
+	-moz-transform: -moz-translateY(10px);
+	-ms-transform: -ms-translateY(10px);
+	transform: translateY(10px);
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	-webkit-transition: transform 0.3s, opacity 0.2s;
+}
+
+.cbp-ig-grid li:hover .cbp-ig-category,
+.touch .cbp-ig-grid li .cbp-ig-category {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+/* Hover styles */
+
+.cbp-ig-grid li > .w3_grid_effect:hover {
+    background: #343a40;
+}
+
+.cbp-ig-grid li > .w3_grid_effect:hover .cbp-ig-icon {
+	-webkit-transform: translateY(-20px);
+	-moz-transform: translateY(-20px);
+	-ms-transform: translateY(-20px);
+	transform: translateY(-20px);
+}
+
+.cbp-ig-grid li > .w3_grid_effect:hover .cbp-ig-icon:before
+ {
+	color: gray;
+}
+.cbp-ig-grid li > .w3_grid_effect:hover .cbp-ig-title{
+	color:#fff;
+}
+
+.cbp-ig-grid li > .w3_grid_effect:hover .cbp-ig-title {
+	-webkit-transform: translateY(-45px);
+	-moz-transform: translateY(-45px);
+	-ms-transform: translateY(-45px);
+	transform: translateY(-45px);
+}
+
+.cbp-ig-grid li > .w3_grid_effect:hover .cbp-ig-title:before {
+	background: #fff;
+	margin-top: 68px;
+}
+
+
+@media screen and (max-width: 62.75em) {
+	.cbp-ig-grid li {
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 25em) { 
+	.cbp-ig-grid {
+		font-size: 80%;
+	}
+}
+/*-- //banner-bottom --*/
+/*-- contact --*/
+
+section.contact-w3ls {
+	background:url(../images/3.jpg) no-repeat;
+	background-position:center;
+	background-attachment:fixed;
+	background-size:100% 100%;
+	-webkit-background-size:100% 100%;
+	-moz-background-size:100% 100%;
+	-o-background-size:100% 100%;
+	-ms-background-size:100% 100%;
+}
+section.contact-w3ls p.contact-agile1 {
+    font-size: 15px;
+	letter-spacing: 1px;
+    font-weight: normal;
+    padding-bottom: 10px;
+    line-height: 29px;
+    color: #fff;
+}
+section.contact-w3ls p.contact-agile1 strong {
+    font-family: 'Federo', sans-serif;
+    letter-spacing: 1.5px;
+    color: teal!important;
+	font-size: 16px;
+}
+section.contact-w3ls p.contact-agile1 a {
+	color:#fff;
+}
+section.contact-w3ls .contact-agileits,.contact-w3-agile1 {
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 20px 35px;
+    margin-top: 70px;
+}
+section.contact-w3ls h4 {
+	font-size:35px;
+	letter-spacing: 1.5px;
+	font-weight:normal;
+	color:#fff;
+	padding-bottom:20px;
+	font-family: 'Federo', sans-serif;
+	text-align:center;
+}
+section.contact-w3ls p.contact-agile2 {
+	font-size:16px;
+	font-weight:normal;
+	padding-bottom:20px;
+	line-height:30px;
+	color: cyan;
+	text-align:center;
+}
+
+.footer-icons-agileinfo{
+	margin-left:0!important;
+}
+.contact-w3-agile1 iframe {
+    width: 100%;
+    height: 190px;
+    margin-top: 1.5em;
+    outline: none;
+    border: none;
+}
+/*-- /contact --*/

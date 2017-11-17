@@ -1,5 +1,5 @@
 <?php
-
+	// include("../includes/config.php"); 
 	define("DB_SERVER", "localhost");
 	define("DB_USER", "dorahotel");
 	define("DB_PASS", "admin");
@@ -17,7 +17,7 @@
 ?>
 
 	<?php
-		$query = "select * from roombook";
+		$query = "select * from roombook where status = 0";
 		$result = mysqli_query($connection, $query);
 		if(!$result) {
 			die("Database query failed.");
@@ -78,14 +78,14 @@
 											<?php
 												while($row=mysqli_fetch_assoc($result)){
 												echo"<tr>
-													<th>".$row['id']."</th>
-													<th>".$row['fullName']."</th>
-													<th>".$row['phone']."</th>
-													<th>".$row['rName']."</th>
-													<th>".$row['rType']."</th>
-													<th>".$row['cin']."</th>
-													<th>".$row['cout']."</th>";
-													echo "<td><button class=\"btn btn-success\"> Confirm </button></td>
+													<td>".$row['id']."</td>
+													<td>".$row['fullName']."</td>
+													<td>".$row['phone']."</td>
+													<td>".$row['rName']."</td>
+													<td>".$row['rType']."</td>
+													<td>".$row['cin']."</td>
+													<td>".$row['cout']."</td>";
+													echo "<td><button class=\"btn btn-success\" name=\"confirm\"> Confirm </button></td>
 													</tr>";
 												}
 											?>

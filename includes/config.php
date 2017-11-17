@@ -49,10 +49,38 @@
 	}
 ?>
 
-<!-- if (!isLoggedIn()) {
-	$_SESSION['msg'] = "You must log in first";
-	header('location: login.php');
-} -->
+<!-- roombook Confirmation -->
+<?php
+
+	if(isset($_POST['confirm'])) { 
+
+		
+	}
+?>
+
+<!-- rooms edit -->
+<?php
+
+	if(isset($_POST['edit'])) { 
+		edit();
+	}
+?>
+
+<!-- archive roombook -->
+<?php
+
+	if(isset($_POST['archive_rbook'])) { 
+		archive_rbook();
+	}
+?>
+
+<!-- archive user -->
+<?php
+
+	if(isset($_POST['archive_users'])) { 
+		archive_users();
+	}
+?>
 
 <?php
 	mysqli_close($connection);

@@ -1,3 +1,4 @@
+
 <?php
 
 	define("DB_SERVER", "localhost");
@@ -55,6 +56,7 @@
                                             <th>Check-in Date</th>
                                             <th>Check-out Date</th>
                                             <th>Status Level</th>
+                                            <th>Action</th>
                                             
                                         </tr>
                                     </thead>
@@ -62,27 +64,30 @@
 		                                <?php
 											while($row=mysqli_fetch_assoc($result)){
 												echo"<tr>
-													<th>".$row['id']."</th>
-													<th>".$row['fullName']."</th>
-													<th>".$row['phone']."</th>
-													<th>".$row['rName']."</th>
-													<th>".$row['rType']."</th>
-													<th>".$row['cin']."</th>
-													<th>".$row['cout']."</th>";
+													<td>".$row['id']."</td>
+													<td>".$row['fullName']."</td>
+													<td>".$row['phone']."</td>
+													<td>".$row['rName']."</td>
+													<td>".$row['rType']."</td>
+													<td>".$row['cin']."</td>
+													<td>".$row['cout']."</td>";
 													
 													if($row['status']){
-														echo "<th>"."Confirmed"."</th>";
+														echo "<td>"."Confirmed"."</td>";
 													}else{
-														echo "<th>"."Not yet"."</th>";
+														echo "<td>"."Not yet"."</td>";
 													}
-													echo "</tr>";
-												}
+													echo "<td><button name=\"archive_rbook\" value=".$row['id']." class=\"btn btn-success\"> Archive </button></td>
+														</tr>";
+
+												}	
 											?>
-											<!-- <th><input type="submit" name="co" value="Confirm" class="btn btn-success"></th> -->
+											
 
 		                            </tbody>
                                     
                                 </table>
+                                
 	                    </div>
 	                </div>
 	            </div>

@@ -24,14 +24,6 @@ if(isset($_GET["status"])) {
   $selected_menu_Payment = null;
   $selected_menu_Settings = null;
   $selected_menu_Logout =null;
-}elseif(isset($_GET["payment"])) {
-  $selected_menu_Payment = $_GET["payment"];
-  $selected_menu_Status = null;
-  $selected_menu_RoomBook = null;
-  $selected_menu_Rooms = null;
-  $selected_menu_Users = null;
-  $selected_menu_Settings = null;
-  $selected_menu_Logout =null;
 }elseif(isset($_GET["users"])) {
   $selected_menu_Users = $_GET["users"];
   $selected_menu_Status = null;
@@ -63,7 +55,7 @@ if(isset($_GET["status"])) {
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-      <meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DORA ADMIN</title>
     <!-- Bootstrap core CSS -->
@@ -106,12 +98,6 @@ if(isset($_GET["status"])) {
                 <ul class="nav" id="main-menu">
                   <li><a  href="../admin/index.php?rooms=<?php echo urlencode("Room Availability Checker");?>">
                     <i class="fa fa-tasks"></i> Rooms</a>
-                  </li>
-                </ul>
-
-                <ul class="nav" id="main-menu">
-                  <li><a href="../admin/index.php?payment=<?php echo urlencode("Payment Details");?>">
-                    <i class="fa fa-money"></i> Payment</a>
                   </li>
                 </ul>
 
@@ -159,8 +145,6 @@ if(isset($_GET["status"])) {
                     
                      if(isset($selected_menu_Status)){
                       include("../admin/status.php");
-                    }elseif(isset($selected_menu_Payment)){
-                      include("../admin/payment.php");
                     }elseif(isset($selected_menu_RoomBook)){
                       include("../admin/roombook.php");
                     }elseif(isset($selected_menu_Rooms)){

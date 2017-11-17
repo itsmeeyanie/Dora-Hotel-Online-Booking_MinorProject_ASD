@@ -16,9 +16,13 @@
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!-- Custom styles for this template 
     <link href="css/custom-styles.css" rel="stylesheet">
-    <link href="css/one-page-wonder.css" rel="stylesheet">
+    <link href="css/one-page-wonder.css" rel="stylesheet">-->
+
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet"> <!--font-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="thumbnail/thumbnail-gallery.css">
 
     <link rel="stylesheet" type="text/css" href="fonts/FUTRFW.TTF">
     <link rel="stylesheet" type="text/css" href="fonts/TheLightFont.ttf">
@@ -37,14 +41,15 @@
     
 
 <section style="background-color: rgb( 230, 230, 230 );">
+    <?php
+      include("../includes/rooms_gallery.php");
+    ?>  
+  <div class="row advantage-grid left-w3ls">
     <div class="container p-5 m-auto"> 
-        <div class="row pt-5">
-            <div class="col-md-6"><h1 class="page-header">RESERVATION</h1></div>
-        </div><br>
-      <div class="row pb-5" >
-        <div class="col-md-4 col-sm-4">
+      <div class="row" >
+        <div class="col-md-8 col-sm-2">
           <div class="panel panel-primary">
-            <div class="panel-heading"> <strong> RESERVATION INFORMATION </strong> </div>
+            <div class="panel-heading p-4"> <strong> <h5>RESERVATION INFORMATION</h5> </strong> </div>
               <div class="panel-body">
                 <!-- FORM -->
                 <form class="form-horizontal" action="../includes/config.php" method="POST">
@@ -59,18 +64,18 @@
                     </div>
 
                     <div class="form-group">
-                      <label>Room Name</label>
-                        <input type="text" name="rName" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
                       <label>Type Of Room *</label>
                         <select name="rType"  class="form-control" required>
                           <option value selected ></option>
                           <option value="Superior Room">SUPERIOR ROOM</option>
                           <option value="Deluxe Room">DELUXE ROOM</option>
-                          <option value="Business Class">SINGLE ROOM</option>
+                          <option value="Business Class">BUSINESS CLASS</option>
                         </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label>Room Name</label>
+                        <input type="text" name="rName" class="form-control" required>
                     </div>
 
                     <div class="form-group">
@@ -91,9 +96,8 @@
           </div>
         </div>
       </div>
-    </div>
-
-			
+    </div>		
+  </div>
 </section>
 
  <!-- LOGIN MODAL -->

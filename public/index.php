@@ -1,29 +1,54 @@
-<?php
-  // include("../includes/config.php");
+<?php 
+  include("../includes/session.php");
+  include("../includes/functions.php");
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DORA</title>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+
+    if (this.hash !== "") {
+      event.preventDefault();
+
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        window.location.hash = hash;
+      });
+    } 
+  });
+});
+</script>
+<style>
+body, html, .main {
+    height: 100%;
+}
+
+section {
+    min-height: 100%;
+}
+</style>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- FontAwesome Styles-->
-    <link href="../admin/assets/css/font-awesome.css" rel="stylesheet" />
-
     <!-- Custom styles for this template -->
-    <link href="css/one-page-wonder.css" rel="stylesheet">
-    <link href="css/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
+    <link href="../public/css/one-page-wonder.css" rel="stylesheet">
+    <link href="../public/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
+     <!-- FontAwesome Styles-->
+    <link href="../admin/assets/css/font-awesome.css" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="fonts/FUTRFW.TTF">
     <link rel="stylesheet" type="text/css" href="fonts/TheLightFont.ttf">
@@ -33,28 +58,49 @@
   <body>
 
     <!-- Navigation -->
-    <?php include("../includes/header.php"); ?>
+    <?php
+        if (confirm_logged_in()) {
+          include("../includes/nav-login.php");
+        }else{
+          include("../includes/header.php");
+        }
+    ?>
 
     <!-- LOGIN MODAL -->
     <div class="modal fade" id="popUpWindow">
       <div class="modal-dialog">
-        <div class="modal-content panel-default panel">
-        <div class="panel-body">
-          <div class="modal-header" style="background-color: gray;">
+        <div class="modal-content panel">
+        <div class="panel-body p-2">
+          <div class="panel-heading modal-header" style="background-color: gray;">
             <h5 class="text-center text-white">LOGIN</h5>
             <button type="button" class="close" data-dismiss="modal">&times</button>
                 </div>
 
                      <br>
-                          <?php
+                      <form class="form-horizontal" action="../includes/config.php" method="post">
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <input name="username" type="text" class="form-control" placeholder="Username" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <input type="password" name="password" class="form-control" placeholder="Password" value="">
+                                </div>
+                            </div>
 
-                              // if (!isLoggedIn()) {
-                                include("../public/login.php");
-                              // }else{
-                              //   $_SESSION['login'];
-                              // }
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button type="submit" name="login" value="Submit" class="btn btn-dark">
+                                        Login
+                                    </button>
+                                </div>
 
-                          ?>
+                            <br>
+                             <p class="p-3">If you don't have an account, click <a href="signup.php">here</a> to Sign Up.</p>
+                            </div>
+                          </div>
+                        </form>
                         
                     </div>
                 </div>
@@ -62,8 +108,6 @@
         </div>
     </div>
     
-
-
 
     <!-- slideshow -->
     <header class="masthead pt-5">
@@ -124,7 +168,7 @@
     <!-- ABOUT US -->
   <section>
     <div class="wrapper1 m-auto">
-      <div class="about pt-5">
+      <div class="about pt-5" id="about">
         ABOUT DORA
         <div class="col-md-8 order-1 m-auto">
           <p class="a-content">
@@ -132,11 +176,49 @@
           </p>
         </div>
       </div>
+  <!-- banner-bottom -->
+  <div class="banner-bottom p-5 pb-5">
+    <div class="container"> 
+      <div class="w3ls_banner_bottom_grids">
+        <ul class="cbp-ig-grid">
+          <li>
+            <div class="w3_grid_effect">
+              <span class="cbp-ig-icon fa fa-credit-card"></span>
+              <h4 class="cbp-ig-title">AFFORDABLE</h4>
+              <span class="cbp-ig-category">DORA HOTEL</span>
+            </div>
+          </li>
+          <li>
+            <div class="w3_grid_effect">
+              <span class="cbp-ig-icon fa fa-eye"></span>
+              <h4 class="cbp-ig-title">SKY VIEW HOTEL</h4>
+              <span class="cbp-ig-category">DORA HOTEL</span>
+            </div>
+          </li>
+          <li>
+            <div class="w3_grid_effect">
+              <span class="cbp-ig-icon w3_users"></span>
+              <h4 class="cbp-ig-title">LARGE COFFEE</h4>
+              <span class="cbp-ig-category">DORA HOTEL</span>
+            </div>
+          </li>
+          <li>
+            <div class="w3_grid_effect">
+              <span class="cbp-ig-icon fa fa-signal"></span>
+              <h4 class="cbp-ig-title">FAST INTERNET</h4>
+              <span class="cbp-ig-category">DORA HOTEL</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<!-- //banner-bottom -->
 
       <div class="pb-5">
         <div class="container p-5 pt-5">
           <div class="ab-w3l-spa pb-5">
-            <img src="images/about.jpg" class="img-responsive">
+            <!-- <img src="images/about.jpg" class="img-responsive"> -->
           </div>
         <div class="clearfix"> </div>
       </div>
@@ -147,8 +229,8 @@
     <!-- OUR SERVICES -->
   <section>
     <div class="advantages">
-      <div class="container">
-        <div class="container-fluid">
+      <div class="container p-5" id="services">
+        <div class="container-fluid" >
           <h3 class="title-w3-agileits">Our Services</h3>
             <div class="row">
               <div class="col-md-6 advantage-grid left-w3ls wow bounceInLeft" data-wow-delay="0.3s">
@@ -174,73 +256,72 @@
         </div>
       </div>
     </div>
+    <!-- <div class="q2">
+    You will love the amenities we offer.
+    </div> -->
   </section>
+
 <!--//sevices-->
 
-
-   <section>
+   <section class="pb-5">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6 order-2">
-            <div class="p-5">
+            <div>
               <img class="img-fluid rounded-circle" src="images/g6.jpg" alt="">
             </div>
           </div>
           <div class="col-md-6 order-1">
-            <div class="p-5">
+            <div>
               <h2 class="display-4">For those about to rock the Dora...</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <section>
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6">
-            <div class="p-5">
+            <div>
               <img class="img-fluid rounded-circle" src="images/g9.jpg" alt="">
             </div>
           </div>
           <div class="col-md-6">
-            <div class="p-5">
+            <div>
               <h2 class="display-4">We salute you!</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
             </div>
           </div>
         </div>
       </div>
-    </section> 
 
-    <section>
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6 order-2">
-            <div class="p-5">
+            <div>
               <img class="img-fluid rounded-circle" src="images/g10.jpg" alt="">
             </div>
           </div>
           <div class="col-md-6 order-1">
-            <div class="p-5">
+            <div>
               <h2 class="display-4">Let there be rock!</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
             </div>
           </div>
         </div>
       </div>
-
+    </section>
       <!-- CONTACT US -->
 
     <!-- contact -->
     <div class="q2">
     You will love the amenities we offer.
-  </div>
+    </div>
 <section class="contact-w3ls wrapper1" id="contact">
   
-  <div class="m-auto p-4 row container" style="float: right;">
-    <div class="col-lg-12 col-md-12 col-sm-12 contact-w3-agile1 text-left" data-aos="flip-right">
+  <div class="m-auto row container" >
+    <div class="col-lg-6 col-md-6 col-sm-12 contact-w3-agile1 text-left" data-aos="flip-right">
       <h4 class="pb-2">Connect With Us</h4>
       <p class="contact-agile1"><strong>Phone: </strong>09266994458</p>
       <p class="contact-agile1"><strong>Email: </strong> <a href="mailto:name@example.com">INFO@DORAHOTEL.COM</a></p>
@@ -250,7 +331,7 @@
     &q=f.+torres+street+davao+city" allowfullscreen>
         </iframe>
 
-        <div class="social-bnr-agileits footer-icons-agileinfo row col-md-6">
+        <div class="social-bnr-agileits footer-icons-agileinfo row">
         <ul class="social-icons3 nav p-5">
           <li><a href="#" class="fa fa-facebook icon-border facebook"> </a></li>     
         </ul>
@@ -261,6 +342,11 @@
           <li><a href="#" class="fa fa-google-plus icon-border googleplus"> </a></li>      
         </ul>
       </div>
+      <div>
+        
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -270,6 +356,10 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+
+
+
 
   </body>
 

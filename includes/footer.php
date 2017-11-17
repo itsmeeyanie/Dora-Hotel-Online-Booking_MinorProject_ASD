@@ -4,6 +4,5 @@
           <a href="../public/index.php" class="dora">DORA</a>
         </p>
       </div>
-      <!-- /.container -->
     </footer>
     
