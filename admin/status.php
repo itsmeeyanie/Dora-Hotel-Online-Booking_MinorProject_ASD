@@ -143,6 +143,7 @@
 		if($result) {
 			// redirect_to("../public/index.php");
 			echo "<script type='text/javascript'> alert('confirmed!')</script>";
+			echo("<meta http-equiv='refresh' content='1'>");
 		}else{
 			die("Database query failed. " . mysqli_error($connection));
 		}

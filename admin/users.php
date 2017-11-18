@@ -124,6 +124,7 @@
 		$result = mysqli_query($connection, $query);
 		if($result) {
 			echo "<script type='text/javascript'> alert('success!')</script>";
+			echo("<meta http-equiv='refresh' content='1'>");
 		}else{
 			die("Database query failed. " . mysqli_error($connection));
 		}
