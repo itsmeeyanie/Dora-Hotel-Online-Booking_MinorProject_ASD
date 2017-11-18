@@ -7,39 +7,38 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DORA</title>
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("a").on('click', function(event) {
+    <script>
+    $(document).ready(function(){
+      $("a").on('click', function(event) {
 
-    if (this.hash !== "") {
-      event.preventDefault();
+        if (this.hash !== "") {
+          event.preventDefault();
 
-      var hash = this.hash;
+          var hash = this.hash;
 
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-        window.location.hash = hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+            window.location.hash = hash;
+          });
+        } 
       });
-    } 
-  });
-});
-</script>
-<style>
-body, html, .main {
-    height: 100%;
-}
+    });
+    </script>
+    <style>
+    body, html, .main {
+        height: 100%;
+    }
 
-section {
-    min-height: 100%;
-}
-</style>
+    section {
+        min-height: 100%;
+    }
+    </style>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -77,7 +76,7 @@ section {
                 </div>
 
                      <br>
-                      <form action="../includes/config.php" method="post">
+                      <form class="form-horizontal" action="../includes/config.php" method="post">
                             <div class="form-group">
                                 <div class="col-md-8">
                                     <input name="username" type="text" class="form-control" placeholder="Username" value="" required="">

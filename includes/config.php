@@ -62,15 +62,15 @@
 <?php
 
 	if(isset($_POST['edit'])) { 
-		edit();
+		
 	}
 ?>
 
 <!-- archive roombook -->
 <?php
 
-	if(isset($_POST['archive_rbook'])) { 
-		archive_rbook();
+	if(isset($_POST['submit']) && isset($_POST['id']) && !empty($_POST['id'])) {
+		
 	}
 ?>
 
@@ -78,7 +78,7 @@
 <?php
 
 	if(isset($_POST['archive_users'])) { 
-		archive_users();
+		
 	}
 ?>
 

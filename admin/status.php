@@ -24,6 +24,16 @@
 		}
 	?>
 
+	<?php
+		$count = "SELECT id from roombook where status=0";
+	    $cnt = mysqli_query($connection, $count);
+	    if(!$cnt) {
+	      die("Database query failed.");
+	    }else{
+	      $c=mysqli_num_rows($cnt);
+	    }
+	?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +61,7 @@
 						<div class="panel">
 	                        <div class="panel-heading" style="background-color: #17a2b8; ">
 	                            <h4 class="panel-title" style="color: white; font-weight: bold;">
-	                            	New Room Bookings <span class="badge"><!-- <?php echo $c ; ?> --></span>
+	                            	New Room Bookings <span class="badge" style="background-color: #fff; color:#17a2b8;"><?php echo $c ; ?></span>
 	                            </h4>
 	                        </div>
 	            <div id="collapseTwo" class="panel-collapse in" style="height: auto;">
@@ -85,7 +95,7 @@
 													<td>".$row['rType']."</td>
 													<td>".$row['cin']."</td>
 													<td>".$row['cout']."</td>";
-													echo "<td><button class=\"btn btn-success\" name=\"confirm\"> Confirm </button></td>
+													echo "<td><form method=\"post\"><input name=\"id\" type=\"hidden\" value='".$row['id']."';><button class=\"btn btn-primary\" name=\"confirm\">Confirm </button></form></td>
 													</tr>";
 												}
 											?>
@@ -121,6 +131,23 @@
                     
 <?php
 	mysqli_free_result($result);
+?>
+
+<?php
+
+	if(isset($_POST['confirm'])) { 
+		$id = mysqli_real_escape_string($connection, $_POST['id']);
+
+		$query = "UPDATE roombook set status=1 WHERE id='$id'";
+		$result = mysqli_query($connection, $query);
+		if($result) {
+			// redirect_to("../public/index.php");
+			echo "<script type='text/javascript'> alert('confirmed!')</script>";
+		}else{
+			die("Database query failed. " . mysqli_error($connection));
+		}
+		
+	}
 ?>
 
 <?php

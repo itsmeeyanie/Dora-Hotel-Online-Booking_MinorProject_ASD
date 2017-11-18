@@ -177,53 +177,66 @@
 		}
 	}
 
+	// function confirm(){
+	// 	global $connection;
+	// 	$id = mysqli_real_escape_string($connection, $_POST['id']);
+
+	// 	$query = "UPDATE roombook set status=1 WHERE id='$id'";
+	// 	$result = mysqli_query($connection, $query);
+	// 	if($result) {
+	// 		// redirect_to("../public/index.php");
+	// 		echo "<script type='text/javascript'> alert('success!')</script>";
+	// 	}else{
+	// 		die("Database query failed. " . mysqli_error($connection));
+	// 	}
+	// }
 	
 
 
-	function edit(){
-		global $connection;
-		$id = mysqli_real_escape_string($connection, $_POST['id']);
-		$rname = mysqli_real_escape_string($connection, $_POST['rname']);
-		$rtype = mysqli_real_escape_string($connection, $_POST['rtype']);
-		$rrate = mysqli_real_escape_string($connection, $_POST['rrate']);
-		$stat = mysqli_real_escape_string($connection, $_POST['status']);
+	// function edit(){
+	// 	global $connection;
+	// 	$id = mysqli_real_escape_string($connection, $_POST['id']);
+	// 	$rname = mysqli_real_escape_string($connection, $_POST['rname']);
+	// 	$rtype = mysqli_real_escape_string($connection, $_POST['rtype']);
+	// 	$rrate = mysqli_real_escape_string($connection, $_POST['rrate']);
+	// 	$stat = mysqli_real_escape_string($connection, $_POST['status']);
 
-		$query = "UPDATE rooms set rName='$rname', rType='$rtype', rRate='$rrate', status='$stat' WHERE id='$id'";
-		$result = mysqli_query($connection, $query);
-		if($result) {
-			// redirect_to("../public/index.php");
-			echo "<script type='text/javascript'> alert('success!')</script>";
-		}else{
-			die("Database query failed. " . mysqli_error($connection));
-		}
-	}
+	// 	$query = "UPDATE rooms set rName='$rname', rType='$rtype', rRate='$rrate', status='$stat' WHERE id='$id'";
+	// 	$result = mysqli_query($connection, $query);
+	// 	if($result) {
+	// 		// redirect_to("../public/index.php");
+	// 		echo "<script type='text/javascript'> alert('success!')</script>";
+	// 	}else{
+	// 		die("Database query failed. " . mysqli_error($connection));
+	// 	}
+	// }
 
-	function archive_rbook(){
-		global $connection;
-		$id = mysqli_real_escape_string($connection, $_POST['id']);
-		$query = "DELETE FROM roombook WHERE id='$id'";
-		$result = mysqli_query($connection, $query);
-		if($result) {
-			echo "<script type='text/javascript'> alert('success!')</script>";
-		}else{
-			die("Database query failed. " . mysqli_error($connection));
-		}
+	// function archive_rbook(){
+	// 	global $connection;
+	// 	$id = mysqli_real_escape_string($connection, $_POST['id']);
+	// 	$query = "DELETE FROM roombook WHERE id='$id'";
+	// 	$result = mysqli_query($connection, $query);
+	// 	if($result) {
+	// 		echo "<script type='text/javascript'> alert('success!')</script>";
+	// 	}else{
+	// 		die("Database query failed. " . mysqli_error($connection));
+	// 	}
 
-	}
+	// }
 
 
-	function archive_users(){
-		global $connection;
-		$id = mysqli_real_escape_string($connection, $_POST['id']);
-		$query = "DELETE FROM users WHERE id='$id'";
-		$result = mysqli_query($connection, $query);
-		if($result) {
-			echo "<script type='text/javascript'> alert('success!')</script>";
-		}else{
-			die("Database query failed. " . mysqli_error($connection));
-		}
+	// function archive_users(){
+	// 	global $connection;
+	// 	$id = mysqli_real_escape_string($connection, $_POST['id']);
+	// 	$query = "DELETE FROM users WHERE id='$id'";
+	// 	$result = mysqli_query($connection, $query);
+	// 	if($result) {
+	// 		echo "<script type='text/javascript'> alert('success!')</script>";
+	// 	}else{
+	// 		die("Database query failed. " . mysqli_error($connection));
+	// 	}
 
-	}
+	// }
 
 	function login(){
 		global $connection;

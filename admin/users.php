@@ -78,7 +78,7 @@
 														<th>".$row['address']."</th>
 														<th>".$row['email']."</th>
 														<th>".$row['username']."</th>";
-														echo "<td><button name=\"archive_users\" value=".$row['id']." class=\"btn btn-success\"> Archive </button></td>
+														echo "<td><form method=\"post\"><input name=\"id\" type=\"hidden\" value='".$row['id']."';><button name=\"archive\" value=".$row['id']." class=\"btn btn-danger\"> Archive </button></form></td>
 														</tr>";
 													}
 												?>
@@ -114,7 +114,23 @@
                     
     <?php
 		mysqli_free_result($result);
-	?>       
+	?>      
+
+	<?php
+
+	if(isset($_POST['archive']) && isset($_POST['id']) && !empty($_POST['id'])) { 
+		$id = mysqli_real_escape_string($connection, $_POST['id']);
+		$query = "DELETE FROM users WHERE id='$id'";
+		$result = mysqli_query($connection, $query);
+		if($result) {
+			echo "<script type='text/javascript'> alert('success!')</script>";
+		}else{
+			die("Database query failed. " . mysqli_error($connection));
+		}
+	}
+
+	
+?>   
 
 <?php
 	mysqli_close($connection);

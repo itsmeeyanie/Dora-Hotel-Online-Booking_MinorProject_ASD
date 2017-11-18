@@ -68,9 +68,6 @@
 <html>
 <head>
   <title></title>
-  <!-- Bootstrap core CSS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 
@@ -115,18 +112,12 @@
 
                 </button></td> 
               </tr>
-            </table>
-            
-            
-            
-                        
-            
-            </div>
-                        <div class="panel-footer" style="background-color: #17a2b8;">
-                            
-                        </div>
-                    </div>
+            </table>          
           </div>
+              <div class="panel-footer" style="background-color: #17a2b8;">
+              </div>
+          </div>
+        </div>
 
   <div class="row">
       <div class="col-md-12">
@@ -172,7 +163,7 @@
                             echo "<td>"."Available"."</td>";
                           }
 
-                          echo "<td><input onclick=\"document.getElementById('id01').style.display='block'\" class=\"btn btn-success edit-data\" type=\"button\" name=\"edit\" value=\"Edit\" id=".$id."></input></td>
+                          echo "<td><input onclick=\"document.getElementById('id01').style.display='block'\" class=\"btn btn-success edit-data\" type=\"button\" name=\"edit\" value=\"Edit\" id=".$id."></input></form></td>
                           </tr>";
                         }
                       ?>
@@ -188,17 +179,17 @@
 
 <!-- Modal content-->
 
-  <div id="id01" class="w3-modal">
-    <div class="w3-modal-content col-md-4 w3-display-middle">
-      <div class="modal-header">
-        <h4 class="modal-title">Room Details</h4>
-        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+  <div id="id01" class="modal">
+    <div class="modal-content col-md-4" style="position: fixed; right: 30%;">
+      <div class="modal-body">
+        <div class="modal-header">
+        <span onclick="document.getElementById('id01').style.display='none'" class="btn btn-default">&times;</span></div>
       </div>
-        <div class="w3-container">
-                      <form class="form-horizontal" action="../includes/config.php" method="post">
+        <div class="modal-body">
+                      <form method="post">
                           <div class="form-group">
                                 <div class="col-md-12">
-                                    <input name="id" class="form-control" value="<?php echo $id; ?>">
+                                  <input name="id" class="form-control" value="<?php echo $id; ?>">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -239,34 +230,7 @@
     </div>
   </div>
 
-  <!-- Update MODAL -->
-
-
-    
-  
-<!--  <script>  
- $(document).ready(function(){  
-
-      $(document).on('click', function(){  
-           var employee_id = $(this).attr("id");  
-           $.ajax({  
-                url:"../includes/config.php",  
-                method:"POST",  
-                data:{employee_id:employee_id},  
-                dataType:"json",  
-                success:function(data){  
-                     $('#id').val(data.id);  
-                     $('#rname').val(data.rname);  
-                     $('#rtype').val(data.rtype);  
-                     $('#rrate').val(data.rrate);  
-                     $('#status').val(data.status);   
-                     $('#edit').val("edit");  
-                     $('#id01').modal('show');  
-                }  
-           });  
-      });  
- });  
- </script> -->
+ 
 </div>
     
 </body>
@@ -274,6 +238,25 @@
 
 <?php
   mysqli_free_result($result);
+?>
+
+<?php
+
+  if(isset($_POST['edit']) ) { 
+    $id = mysqli_real_escape_string($connection, $_POST['id']);
+    $rname = mysqli_real_escape_string($connection, $_POST['rname']);
+    $rtype = mysqli_real_escape_string($connection, $_POST['rtype']);
+    $rrate = mysqli_real_escape_string($connection, $_POST['rrate']);
+    $stat = mysqli_real_escape_string($connection, $_POST['status']);
+
+    $query = "UPDATE rooms set rName='$rname', rType='$rtype', rRate='$rrate', status='$stat' WHERE id='$id'";
+    $result = mysqli_query($connection, $query);
+    if($result) {
+      echo "<script type='text/javascript'> alert('success!')</script>";
+    }else{
+      die("Database query failed. " . mysqli_error($connection));
+    }
+  }
 ?>
 
 <?php
