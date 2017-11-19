@@ -5,7 +5,7 @@
 	define("DB_PASS", "admin");
 	define("DB_NAME", "db_dorahotel");
 
-	$connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+	$connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME); //connect to database
 
 	if(mysqli_connect_errno()){
 		die("Database connection failed: " . 
