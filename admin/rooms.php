@@ -16,6 +16,7 @@
 
 ?>
 
+
   <?php
     $query = "select * from rooms";
     $result = mysqli_query($connection, $query);
@@ -24,6 +25,7 @@
     }
   ?>
 
+<!-- TOTAL COUNT OF ROOMS -->
   <?php
     $total = "SELECT status from rooms where status = 0";
     $tnum = mysqli_query($connection, $total);
@@ -34,6 +36,7 @@
     }
   ?>
 
+<!-- TOTAL COUNT OF DELUXE ROOMS -->
   <?php
     $deluxe = "SELECT rType from rooms where rType='Deluxe Room' and status=0";
     $del = mysqli_query($connection, $deluxe);
@@ -44,6 +47,8 @@
     }
   ?>
 
+
+<!-- TOTAL COUNT OF SUPERIOR ROOMS -->
   <?php
     $superior = "SELECT rType from rooms where rType='Superior Room' and status=0";
     $sup = mysqli_query($connection, $superior);
@@ -54,6 +59,7 @@
     }
   ?>
 
+<!-- TOTAL COUNT OF BUSINESS CLASS ROOMS -->
   <?php
     $businessclass = "SELECT rType from rooms where rType='Business Class' and status=0";
     $bclass = mysqli_query($connection, $businessclass);
@@ -162,11 +168,13 @@
                           }else{
                             echo "<td>"."Available"."</td>";
                           }
-
-                          echo "<td><input onclick=\"document.getElementById('id01').style.display='block'\" class=\"btn btn-success edit-data\" type=\"button\" name=\"edit\" value=\"Edit\" id=".$id."></input></form></td>
-                          </tr>";
+                      echo "<td><input onclick=\"document.getElementById('id01').style.display='block'\" class=\"btn btn-success edit-data\" type=\"button\" name=\"edit\" value=\"Edit\" id='.<?php echo $id; ?>.'></input></td>
+                      </tr>";
+                          
                         }
                       ?>
+
+                      
 
                                 </tbody>
                                     
@@ -186,7 +194,8 @@
         <span onclick="document.getElementById('id01').style.display='none'" class="btn btn-default">&times;</span></div>
       </div>
         <div class="modal-body">
-                      <form method="post">
+          <input type="hidden" name="id" value="<?php echo $id; ?>">
+                      <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                           <div class="form-group">
                                 <div class="col-md-12">
                                   <input name="id" class="form-control" value="<?php echo $id; ?>">
@@ -208,9 +217,11 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-12">
-                                    <input name="status" class="form-control" value="<?php echo $stat; ?>">
-                                </div>
+                              <div class="col-md-12">
+                                <label>Status: <span class="note">*</span></label>
+                                <input type="radio" name="status" value="available" <?php echo $stat; ?>>Available
+                                <input type="radio" name="status" value="occupied" <?php echo $stat; ?>>Occupied<br>
+                              </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12 col-md-offset-4">
@@ -248,6 +259,19 @@
     $rtype = mysqli_real_escape_string($connection, $_POST['rtype']);
     $rrate = mysqli_real_escape_string($connection, $_POST['rrate']);
     $stat = mysqli_real_escape_string($connection, $_POST['status']);
+    switch($stat){
+        case "available":
+          $stat=0;
+          break;
+        case "occupied":
+          $stat=1;
+          break;
+
+        default:
+          $stat=1;
+          break;
+    };
+
 
     $query = "UPDATE rooms set rName='$rname', rType='$rtype', rRate='$rrate', status='$stat' WHERE id='$id'";
     $result = mysqli_query($connection, $query);

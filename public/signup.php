@@ -44,6 +44,7 @@
             SIGN UP
         </h1>
     </div>
+     <?php include("../includes/errors.php"); ?>
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

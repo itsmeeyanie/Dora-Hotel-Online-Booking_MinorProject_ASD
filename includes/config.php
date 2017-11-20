@@ -24,10 +24,18 @@
 <!-- SIGNUP -->
 
 <?php
+	 $errors = array();
 
 	if(isset($_POST['signup'])) { 
-
-		register();
+		$pass_1 = mysqli_real_escape_string($connection, $_POST['password']);
+		$pass_2 = mysqli_real_escape_string($connection, $_POST['password_confirmation']);
+		if($pass_1 != $pass_2) 
+        {
+        	array_push($errors, "Passwords do not match");
+        	echo "<script type='text/javascript'> alert('Passwords do not match')</script>";
+        }else{
+        	register();
+        }
 	}
 ?>
 
@@ -81,6 +89,7 @@
 		
 	}
 ?>
+
 
 <?php
 	mysqli_close($connection);

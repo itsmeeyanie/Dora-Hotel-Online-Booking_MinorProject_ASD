@@ -143,7 +143,7 @@ p {
             </li>
             <li><img src="images/rooms/deluxe-2.jpg" alt="rooms">
                 <div class="caption">
-                        <h5>DELUXE</h5>
+                        <h5>SUPERIOR</h5>
                         <p style="font-weight: bold;">Sky Bed</p>
                         <p>Amenities includes <i>free wifi, LCD TV, desk, sofas, mini ref, airconditioning, telephone
                         rain shower, minibar</i></p>
@@ -156,7 +156,7 @@ p {
                         <p style="font-weight: bold;">Sky Bed</p>
                         <p>Amenities includes <i>free wifi, LCD TV, desk, sofas, mini ref, airconditioning, telephone
                         rain shower, minibar</i></p>
-                        <button id="room006" class="btn btn-secondary">CHOOSE ME</button>
+                        <button id="room008" class="btn btn-secondary">CHOOSE ME</button>
                 </div>
             </li>
             <li><img src="images/rooms/deluxe-2.jpg" alt="rooms">
@@ -165,7 +165,7 @@ p {
                         <p style="font-weight: bold;">Sky Bed</p>
                         <p>Amenities includes <i>free wifi, LCD TV, desk, sofas, mini ref, airconditioning, telephone
                         rain shower, minibar</i></p>
-                        <button id="room006" class="btn btn-secondary">CHOOSE ME</button>
+                        <button id="room010" class="btn btn-secondary">CHOOSE ME</button>
                 </div>
             </li>
             <li><img src="images/rooms/deluxe-2.jpg" alt="rooms">
@@ -174,7 +174,7 @@ p {
                         <p style="font-weight: bold;">Splashy <i>twin bed</i></p>
                         <p>Amenities includes <i>free wifi, LCD TV, sofas, mini ref, airconditioning, telephone
                         rain shower, a way to the pool </i></p>
-                        <button id="room006" class="btn btn-secondary">CHOOSE ME</button>
+                        <button id="room012" class="btn btn-secondary">CHOOSE ME</button>
                 </div>
             </li>
             <li><img src="images/rooms/bclass.jpg" alt="Traffic">
@@ -182,7 +182,7 @@ p {
                         <h5>BUSINESS CLASS</h5>
                         <p style="font-weight: bold;">All You Need</p>
                         <p>Amenities includes <i> own room wifi, office desk, sofas, mini bar, mini ref, cabinet, airconditioning, telephone, rain shower and bath tub, bathrob, slippers, complimentary entrance to spa and gym, free breakfast </i></p>
-                        <button id="room006" class="btn btn-secondary">CHOOSE ME</button>
+                        <button id="room014" class="btn btn-secondary">CHOOSE ME</button>
                 </div>
             </li>
             <li><img src="images/rooms/bclass.jpg" alt="Traffic">
@@ -190,7 +190,7 @@ p {
                         <h5>BUSINESS CLASS</h5>
                         <p style="font-weight: bold;">All You Need</p>
                         <p>Amenities includes <i> own room wifi, office desk, sofas, mini bar, mini ref, cabinet, airconditioning, telephone, rain shower and bath tub, bathrob, slippers, complimentary entrance to spa and gym, free breakfast </i></p>
-                        <button id="room006" class="btn btn-secondary">CHOOSE ME</button>
+                        <button id="room016" class="btn btn-secondary">CHOOSE ME</button>
                 </div>
             </li>
             <li><img src="images/rooms/bclass-1.jpg" alt="Traffic">
@@ -198,7 +198,7 @@ p {
                         <h5>BUSINESS CLASS</h5>
                         <p style="font-weight: bold;">All You Need</p>
                         <p>Amenities includes <i> own room wifi, sofas, mini bar, mini ref, cabinet, airconditioning, telephone, rain shower and bath tub, complimentary entrance to spa and gym, free breakfast </i></p>
-                        <button id="room006" class="btn btn-secondary">CHOOSE ME</button>
+                        <button id="room018" class="btn btn-secondary">CHOOSE ME</button>
                     </div>
             </li>
         </ul>

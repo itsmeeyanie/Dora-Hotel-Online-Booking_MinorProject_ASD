@@ -70,9 +70,8 @@
       <div class="modal-dialog">
         <div class="modal-content panel">
         <div class="panel-body p-2">
-          <div class="panel-heading modal-header" style="background-color: gray;">
-            <h5 class="text-center text-white">LOGIN</h5>
-            <button type="button" class="close" data-dismiss="modal">&times</button>
+          <div class="panel-heading modal-header">
+            <button type="button" class="btn btn-default close" data-dismiss="modal">&times;</button>
                 </div>
 
                      <br>
@@ -210,6 +209,9 @@
           </li>
         </ul>
       </div>
+    </div>
+    <div>
+      <p class="p-5 col-md-10 order-1 m-auto">Providing guests unique and enchanting views from their rooms with its exceptional amenities, makes Dora Hotel one of bests in its kind. Try our food menu, awesome services and friendly staff while you are here.</p>
     </div>
   </div>
 <!-- //banner-bottom -->

@@ -77,7 +77,7 @@
 													}else{
 														echo "<td>"."Not yet"."</td>";
 													}
-													echo "<td><form method=\"post\"><input name=\"id\" type=\"hidden\" value='".$row['id']."';><input name=\"submit\" type=\"submit\" class=\"btn btn-danger\" id=".$row['id']." value=\"Archive\"></input></form></td>
+													echo "<td><form method=\"post\"><input name=\"id\" type=\"hidden\" value='".$row['id']."';><input onclick=\"myFunction()\" name=\"submit\" type=\"submit\" class=\"btn btn-danger\" id=".$row['id']." value=\"Archive\"></input></form></td>
 														</tr>";
 
 												}	
@@ -110,8 +110,6 @@
         });
     </script>				
 
-
-
 </body>
 
 </html>
@@ -120,23 +118,20 @@
 		mysqli_free_result($result);
 	?>
 
-	<?php
+		<?php
 
-	if(isset($_POST['submit']) && isset($_POST['id']) && !empty($_POST['id'])) { 
-		$id = mysqli_real_escape_string($connection, $_POST['id']);
-		$query = "DELETE FROM roombook WHERE id='$id'";
-		$result = mysqli_query($connection, $query);
-		if($result) {
-			echo "<script type='text/javascript'> alert('Archived!')</script>";
-			echo("<meta http-equiv='refresh' content='1'>");
-		}else{
-			die("Database query failed. " . mysqli_error($connection));
-		}
-	}
-
-	
-?>  
-
+			if(isset($_POST['submit']) && isset($_POST['id']) && !empty($_POST['id'])) { 
+				$id = mysqli_real_escape_string($connection, $_POST['id']);
+				$query = "DELETE FROM roombook WHERE id='$id'";
+				$result = mysqli_query($connection, $query);
+				if($result) {
+					echo "<script type='text/javascript'> alert('success!')</script>";
+					echo("<meta http-equiv='refresh' content='1'>");
+				}else{
+					die("Database query failed. " . mysqli_error($connection));
+				}
+			}
+		?>
 <?php
 	mysqli_close($connection);
 ?>

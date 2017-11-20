@@ -67,15 +67,37 @@
                       <label>Type Of Room *</label>
                         <select name="rType"  class="form-control" required="">
                           <option value selected ></option>
-                          <option value="Superior Room">SUPERIOR ROOM</option>
-                          <option value="Deluxe Room">DELUXE ROOM</option>
-                          <option value="Business Class">BUSINESS CLASS</option>
+                          <option name="sup" value="Superior Room">SUPERIOR ROOM</option>
+                          <option name="del" value="Deluxe Room">DELUXE ROOM</option>
+                          <option name="bus" value="Business Class">BUSINESS CLASS</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                       <label>Room Name</label>
-                        <input type="text" name="rName" class="form-control" required="">
+                      <select name="rName" class="form-control" required="">
+
+                          <option value selected ></option>
+                          <option value selected disabled>SUPERIOR</option>
+                          <option value="Room 002|1">Room 002</option>
+                          <option value="Room 004|2">Room 004</option>
+                          <option value="Room 006|3">Room 006</option>
+                        
+                          <option value selected ></option>
+                          <option value selected disabled>DELUXE</option>
+                          <option value="Room 008|4">Room 008</option>
+                          <option value="Room 0010|5">Room 0010</option>
+                          <option value="Room 0012|6">Room 0012</option>
+                        
+                          <option value selected ></option>
+                          <option value selected disabled>BUSINESS CLASS</option>
+                          <option value="Room 014|7">Room 014</option>
+                          <option value="Room 016|8">Room 016</option>
+                          <option value="Room 018|9">Room 018</option>
+                        
+                          <option value selected ></option>
+                      </select>
+                        
                     </div>
 
                     <div class="form-group">
@@ -85,6 +107,15 @@
                     <div class="form-group">
                       <label>Check-Out</label>
                         <input name="cout" type ="date" class="form-control" value="" required="">
+                    </div>
+                    <div class="form-group">
+                      <label>Mode of Payment</label>
+                      <select class="form-control" required="">
+                          <option value selected ></option>
+                          <option>Check</option>
+                          <option>Credit Card</option>
+                          <option>Paypal</option>
+                      </select>
                     </div>
                     <div class="form-group">
                       <button type="submit" name="reservation" class="btn btn-primary">Submit</button>
@@ -144,6 +175,12 @@
 
 <!-- Footer -->
     <?php include("../includes/footer.php"); ?>
+
+
+
+<div>
+
+</div>
 
 </body>
 </html>

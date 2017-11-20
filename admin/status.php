@@ -95,7 +95,7 @@
 													<td>".$row['rType']."</td>
 													<td>".$row['cin']."</td>
 													<td>".$row['cout']."</td>";
-													echo "<td><form method=\"post\"><input name=\"id\" type=\"hidden\" value='".$row['id']."';><button class=\"btn btn-primary\" name=\"confirm\">Confirm </button></form></td>
+													echo "<td><form method=\"post\"><input name=\"id\" type=\"hidden\" value='".$row['id']."';><button onclick=\"myFunction()\" class=\"btn btn-primary\" name=\"confirm\">Confirm </button></form></td>
 													</tr>";
 												}
 											?>
@@ -125,31 +125,28 @@
     </script>
 
 
-
 </body>
 </html>
                     
 <?php
 	mysqli_free_result($result);
 ?>
+		<?php
+			if(isset($_POST['confirm'])) { 
+				$id = mysqli_real_escape_string($connection, $_POST['id']);
 
-<?php
+				$query = "UPDATE roombook set status=1 WHERE id='$id'";
+				$result = mysqli_query($connection, $query);
+				if($result) {
+					echo "<script type='text/javascript'> alert('success!')</script>";
+					echo("<meta http-equiv='refresh' content='1'>");
+				}else{
+					die("Database query failed. " . mysqli_error($connection));
+				}
+				
+			}
+		?>
 
-	if(isset($_POST['confirm'])) { 
-		$id = mysqli_real_escape_string($connection, $_POST['id']);
-
-		$query = "UPDATE roombook set status=1 WHERE id='$id'";
-		$result = mysqli_query($connection, $query);
-		if($result) {
-			// redirect_to("../public/index.php");
-			echo "<script type='text/javascript'> alert('confirmed!')</script>";
-			echo("<meta http-equiv='refresh' content='1'>");
-		}else{
-			die("Database query failed. " . mysqli_error($connection));
-		}
-		
-	}
-?>
 
 <?php
 	mysqli_close($connection);
