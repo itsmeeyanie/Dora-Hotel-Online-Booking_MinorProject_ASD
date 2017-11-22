@@ -4,7 +4,7 @@
 		<?php foreach ( $errors as $error): ?>
            <p> 
            	  <?php 
-           	    echo "<script type='text/javascript'> alert('".$error;."')</script>";
+           	    echo "<script type='text/javascript'> alert('.$error;.')</script>";
            	  ?> 
            	</p>
 		<?php endforeach ?>

@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="fonts/FUTRFW.TTF">
     <link rel="stylesheet" type="text/css" href="fonts/TheLightFont.ttf">
     <link rel="stylesheet" type="text/css" href="fonts/Better Together Script.ttf">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
 <body>
 
@@ -60,7 +61,7 @@
                     
                     <div class="form-group">
                         <label>Phone *</label>
-                            <input type="text" class="form-control" name="phone" required="">
+                            <input type="number" class="form-control" name="phone" required="">
                     </div>
 
                     <div class="form-group">
@@ -131,26 +132,24 @@
   </div>
 </section>
 
- <!-- LOGIN MODAL -->
-    <div class="modal fade" id="popUpWindow">
+ <div class="modal fade" id="popUpWindow">
       <div class="modal-dialog">
         <div class="modal-content panel">
         <div class="panel-body p-2">
-          <div class="panel-heading modal-header" style="background-color: gray;">
-            <h5 class="text-center text-white">LOGIN</h5>
-            <button type="button" class="close" data-dismiss="modal">&times</button>
+          <div class="panel-heading modal-header">
+            <button type="button" class="btn btn-default close" data-dismiss="modal">&times;</button>
                 </div>
 
                      <br>
                       <form class="form-horizontal" action="../includes/config.php" method="post">
                             <div class="form-group">
                                 <div class="col-md-8">
-                                    <input name="username" type="text" class="form-control" placeholder="Username" value="">
+                                    <input name="username" type="text" class="form-control" placeholder="Username" value="" required="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-8">
-                                    <input type="password" name="password" class="form-control" placeholder="Password" value="">
+                                    <input type="password" name="password" class="form-control" placeholder="Password" value="" required="">
                                 </div>
                             </div>
 
@@ -166,13 +165,12 @@
                             </div>
                           </div>
                         </form>
-
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 <!-- Footer -->
     <?php include("../includes/footer.php"); ?>
 
@@ -182,5 +180,6 @@
 
 </div>
 
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

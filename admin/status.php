@@ -1,8 +1,7 @@
-<?php
-	// include("../includes/config.php"); 
+<?php 
 	define("DB_SERVER", "localhost");
-	define("DB_USER", "dorahotel");
-	define("DB_PASS", "admin");
+	define("DB_USER", "root");
+	define("DB_PASS", "");
 	define("DB_NAME", "db_dorahotel");
 
 	$connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);

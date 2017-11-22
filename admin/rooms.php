@@ -1,8 +1,8 @@
 <?php
 
   define("DB_SERVER", "localhost");
-  define("DB_USER", "dorahotel");
-  define("DB_PASS", "admin");
+  define("DB_USER", "root");
+  define("DB_PASS", "");
   define("DB_NAME", "db_dorahotel");
 
   $connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
@@ -69,6 +69,40 @@
       $bcount=mysqli_num_rows($bclass);
     }
   ?>
+
+<?php
+  
+  if(isset($_POST['edit']) ) { 
+    $id = mysqli_real_escape_string($connection, $_POST['id']);
+    $rname = mysqli_real_escape_string($connection, $_POST['rname']);
+    $rtype = mysqli_real_escape_string($connection, $_POST['rtype']);
+    $rrate = mysqli_real_escape_string($connection, $_POST['rrate']);
+    $stat = mysqli_real_escape_string($connection, $_POST['status']);
+    switch($stat){
+        case "available":
+          $stat=0;
+          break;
+        case "occupied":
+          $stat=1;
+          break;
+
+        default:
+          $stat=1;
+          break;
+    };
+
+
+    $query = "UPDATE rooms set rName='$rname', rType='$rtype', rRate='$rrate', status='$stat' WHERE id='$id'";
+    $result = mysqli_query($connection, $query);
+    if($result) {
+      echo "<script type='text/javascript'> alert('success!')</script>";
+      echo("<meta http-equiv='refresh' content='1'>");
+    }else{
+      die("Database query failed. " . mysqli_error($connection));
+    }
+  }
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -168,17 +202,16 @@
                           }else{
                             echo "<td>"."Available"."</td>";
                           }
-                      echo "<td><input onclick=\"document.getElementById('id01').style.display='block'\" class=\"btn btn-success edit-data\" type=\"button\" name=\"edit\" value=\"Edit\" id='.<?php echo $id; ?>.'></input></td>
+                      echo "<td><a href=\"edit_room.php?id=".$id."\"><input  class=\"btn btn-success edit-data\" type=\"button\" name=\"edit\" value=\"Edit\" id=$id></input></a></td>
                       </tr>";
                           
                         }
                       ?>
 
-                      
-
-                                </tbody>
+                              </tbody>
                                     
                                 </table>
+
                         </div>
                   </div>
           </div>
@@ -194,8 +227,8 @@
         <span onclick="document.getElementById('id01').style.display='none'" class="btn btn-default">&times;</span></div>
       </div>
         <div class="modal-body">
-          <input type="hidden" name="id" value="<?php echo $id; ?>">
-                      <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+          <!-- index.php?rooms=Room+Availability+Checker&ID=$id -->
+                      <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" >
                           <div class="form-group">
                                 <div class="col-md-12">
                                   <input name="id" class="form-control" value="<?php echo $id; ?>">
@@ -251,38 +284,6 @@
   mysqli_free_result($result);
 ?>
 
-<?php
-
-  if(isset($_POST['edit']) ) { 
-    $id = mysqli_real_escape_string($connection, $_POST['id']);
-    $rname = mysqli_real_escape_string($connection, $_POST['rname']);
-    $rtype = mysqli_real_escape_string($connection, $_POST['rtype']);
-    $rrate = mysqli_real_escape_string($connection, $_POST['rrate']);
-    $stat = mysqli_real_escape_string($connection, $_POST['status']);
-    switch($stat){
-        case "available":
-          $stat=0;
-          break;
-        case "occupied":
-          $stat=1;
-          break;
-
-        default:
-          $stat=1;
-          break;
-    };
-
-
-    $query = "UPDATE rooms set rName='$rname', rType='$rtype', rRate='$rrate', status='$stat' WHERE id='$id'";
-    $result = mysqli_query($connection, $query);
-    if($result) {
-      echo "<script type='text/javascript'> alert('success!')</script>";
-      echo("<meta http-equiv='refresh' content='1'>");
-    }else{
-      die("Database query failed. " . mysqli_error($connection));
-    }
-  }
-?>
 
 <?php
   mysqli_close($connection);

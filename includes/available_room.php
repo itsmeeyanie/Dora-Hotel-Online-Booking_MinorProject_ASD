@@ -1,8 +1,8 @@
 <?php
 
   define("DB_SERVER", "localhost");
-  define("DB_USER", "dorahotel");
-  define("DB_PASS", "admin");
+  define("DB_USER", "root");
+  define("DB_PASS", "");
   define("DB_NAME", "db_dorahotel");
 
   $connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
@@ -19,9 +19,16 @@
 <?php
 	$cin = $_GET['cin'];
 	$cout = $_GET['cout'];
-    $sql = "SELECT distinct roombook.room_no, roombook.rType, roombook.rName FROM roombook LEFT JOIN rooms ON roombook.room_no = rooms.id AND (cin not BETWEEN '$cin' AND '$cout' OR cout not BETWEEN '$cin' AND '$cout') where rooms.status =1 ORDER BY roombook.room_no ASC";
+    // $sql = "SELECT distinct roombook.room_no, roombook.rType, roombook.rName FROM roombook LEFT JOIN rooms ON roombook.room_no = rooms.id AND (cin not BETWEEN '$cin' AND '$cout' OR cout not BETWEEN '$cin' AND '$cout') where rooms.status =1 ORDER BY roombook.room_no ASC";
+    $sql = "SELECT DISTINCT room_no, rName, rType from roombook where (cin not between '$cin' and '$cout') and (cout not between '$cin' and '$cout') ORDER BY rName ASC";
     $mysql = mysqli_query($connection, $sql);
     if(!$mysql) {
+      die("Database query failed. " . mysqli_error($connection));
+    }
+
+    $checksup = "SELECT distinct rName from roombook where (cin between '$cin' and '$cout') and (cout between '$cin' and '$cout')";
+    $mysql_check = mysqli_query($connection, $checksup);
+    if(!$checksup) {
       die("Database query failed. " . mysqli_error($connection));
     }
 ?>
@@ -78,10 +85,16 @@
                                     </thead>
                                     <tbody>
 		                                <?php
+                      $arr_check = [];
+                      while($row=mysqli_fetch_assoc($mysql_check)){
+                          array_push($arr_check, $row['rName']);
+                      }
 											while($row=mysqli_fetch_assoc($mysql)){
 												echo "<tr>";
 												foreach ($row as $value) {
-													echo "<td>".$value."</td>";
+                          if (!in_array($value, $arr_check)) {
+                            echo "<td>".$value."</td>";
+                          }
 												}
 												echo "<tr>";
 
