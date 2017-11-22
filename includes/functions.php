@@ -1,4 +1,5 @@
- <?php
+
+<?php
 
 	function redirect_to($new_location) {
 		header("Location: ". $new_location);
@@ -56,6 +57,8 @@
 	      $roomcount=mysqli_num_rows($tnum);
 	    }
 
+	    # THIS IS WHERE WE SHOULD EDIT
+	    #ROOMS TOGETHER WITH THE CHECK IN AND CHECK OUT DATE
 	    if($roomcount==0){
 	    	echo "<script type='text/javascript'> alert('dora is Fully Booked!')</script>";
 	    }else{
